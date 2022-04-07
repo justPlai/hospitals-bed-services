@@ -22,7 +22,5 @@
     <!-- <script src="sweetalert2.all.min.js"></script> -->
 </head>
     <?php 
-        require_once("navber.php");
+        require_once("./navbar.php")
     ?>
-
-</html>
