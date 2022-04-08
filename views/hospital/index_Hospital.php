@@ -10,8 +10,6 @@
 </head>
 
 <style>
-
-
 </style>
 
 <?php 
@@ -24,7 +22,7 @@
         <form method="get" action="">
             <div class="row">
                 <div class="col-1">
-                    <i class="bi bi-hospital" style='font-size:50px'></i>
+                    <i class="bi bi-hospital-fill" style='font-size:50px'></i>
                 </div>
                 <div class="col mt-4">
                         <input type="text"  name="key" value="ชื่อโรงพยาบาล" class="form-control ">
@@ -54,11 +52,11 @@
                         <td>กรุงเทพ</td>
                         <td>012345678</td>
                         <td>9</td>
-                        <td><button  class="btn btn-primary" href="#">📝</button></td>
+                        <td><a  class="btn btn-primary" href="#">📝</a></td>
                     </tr>
             </tbody>
         </table>
-        
+
     </div>
 </body>
 </html>
