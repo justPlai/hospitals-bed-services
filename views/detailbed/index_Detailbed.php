@@ -17,22 +17,23 @@
 
 <body>
     <div class="container mt-5">
+
         <form method="get" action="">
-            <div class="row">
-                <div class="col-1">
-                    <i class="fa fa-bed" style='font-size:50px'></i>
+                <div class="row">
+                    <div class="col-1">
+                        <i class="fa fa-bed" style='font-size:60px;position:relative;top:10px'></i>
+                    </div>
+                    <div class="col mt-4">
+                            <input type="text"  name="key" value="ชื่อโรงพยาบาล" class="form-control" style="position:relative;right:30px">
+                            <input type="hidden" name="controller" value="#">
+                    </div>
+                    <div class="col-3 mt-4">
+                            <button type="submit" class="btn" name="action" value="search" style="position:relative;right:50px;">
+                                <i class="bi bi-search"></i>
+                            </button>
+                    </div>
                 </div>
-                <div class="col mt-4">
-                        <input type="text"  name="key" value="ชื่อโรงพยาบาล" class="form-control ">
-                        <input type="hidden" name="controller" value="#">
-                </div>
-                <div class="col-3 mt-4 ">
-                        <button type="submit" class="btn btn-primary" name="action" value="search">
-                            <i class="bi bi-search"></i>
-                        </button>
-                </div>
-            </div>
-        </form>
+            </form>
 
         <table class="table table-hover mt-3">
             <thead class="table-dark text-center">

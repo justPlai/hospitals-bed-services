@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -30,11 +30,11 @@
                     <i class="bi bi-hospital-fill" style='font-size:50px'></i>
                 </div>
                 <div class="col mt-4">
-                        <input type="text"  name="key" value="ชื่อโรงพยาบาล" class="form-control ">
+                        <input type="text"  name="key" value="ชื่อโรงพยาบาล" class="form-control" style="position:relative;right:40px">
                         <input type="hidden" name="controller" value="#">
                 </div>
                 <div class="col-3 mt-4">
-                        <button type="submit" class="btn btn-primary" name="action" value="search">
+                        <button type="submit" class="btn" name="action" value="search" style="position:relative;right:60px;">
                             <i class="bi bi-search"></i>
                         </button>
                 </div>
