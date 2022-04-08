@@ -1,4 +1,5 @@
 <style>
+    
     .navbar {
         background-color: #0094FF;
         height: 100px;
@@ -12,6 +13,7 @@
         color: white;
         font-size: 150%;
         padding: 20px;
+        font-family: sans-serif;
     }
 
     #line {
@@ -28,47 +30,59 @@
         font-size: 150%;
         padding: 10px;
         float: right;
+        text-decoration: none;
     }
 
     #admin-only{
         font-size: 80%;
+        font-family: sans-serif;
     }
+
+    .main-button{
+        color: white;
+        font-size: 150%;
+        padding: 10px;
+        text-decoration: none;
+        font-family: sans-serif;
+    }
+
+
     
 </style>
 
 <div id="navbar-main">
     <nav class="navbar">
         <div class="navbar-mid">
-            <a class="navbar-brand" href="#">
-                <img src="" alt="" width="30" height="24" >
+            <a class="main-button" href="#">
+                <img src="../img/hospitalsBedServicesIcon.png" height="65px" style="margin-right: 10px;">
                 Hospitals Bed Services
             </a>
             <div id="line"></div>
             <a class="navbar-brand" href="#">
                 รายชื่อทั้งหมด
             </a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
-            <a class="navbar-brand" href="#"></a>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
+            <div class="navbar-brand" href="#"></div>
             <a class="navbar-brand-right" href="#">
                 Login
                 <div id="admin-only">admin only</div>
