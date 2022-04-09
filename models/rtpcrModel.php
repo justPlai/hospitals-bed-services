@@ -2,16 +2,16 @@
 class rtpcrModel
 {
     public $_id;
-    public $patientID;
+    public $patient;
     public $officerID;
     public $result;
     public $detail;
     public $createDate;
 
-    public function __construct($_id, $patientID, $officerID, $result, $detail, $createDate)
+    public function __construct($_id, $patient, $officerID, $result, $detail, $createDate)
     {
         $this->_id = $_id;
-        $this->patientID = $patientID;
+        $this->patient = $patient;
         $this->officerID = $officerID;
         $this->result = $result;
         $this->detail = $detail;
@@ -25,11 +25,12 @@ class rtpcrModel
         foreach ($itemList as $item) {
             $_id = $item['_id'];
             $patientID = $item['patientID'];
+            $patient = patient_api::getById($patientID);
             $officerID = $item['officerID'];
             $result = $item['result'];
             $detail = $item['detail'];
             $createDate = $item['createDate'];
-            $rtpcrList = new rtpcrModel($_id, $patientID, $officerID, $result, $detail, $createDate);
+            $rtpcrList = new rtpcrModel($_id, $patient, $officerID, $result, $detail, $createDate);
         }
 
         return $rtpcrList;
@@ -40,11 +41,12 @@ class rtpcrModel
         $item = doctor_api::getById($id);
         $_id = $item['_id'];
         $patientID = $item['patientID'];
+        $patient = patient_api::getById($patientID);
         $officerID = $item['officerID'];
         $result = $item['result'];
         $detail = $item['detail'];
         $createDate = $item['createDate'];
 
-        return new rtpcrModel($_id, $patientID, $officerID, $result, $detail, $createDate);
+        return new rtpcrModel($_id, $patient, $officerID, $result, $detail, $createDate);
     }
 }
