@@ -1,8 +1,4 @@
-<style>
-    #search {
-        margin-left: 200%;
-    }
-</style>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +27,7 @@ require_once("./navbar.php")
 <body>
     <div id="search">
         <form>
-            <input type="text" />
+            <input type="text" value="" placeholder="ชื่อโรงพยาบาลสนาม..."/>
         </form>
     </div>
 </body>
