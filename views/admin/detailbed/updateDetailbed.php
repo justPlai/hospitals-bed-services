@@ -52,46 +52,48 @@ input[type=date] {
 <body>
     <center>
         <div>
-        <div style="position: relative;right:320px">
-            <h2><i class="fa fa-wrench" style="font-size:50px;" aria-hidden="true"></i>แก้ไขข้อมูลเตียงผู้ป่วย</h2>
-        </div>
-        <div  class="block-1">
-            <form method="get" action="">
 
-                <div style="position: relative;top:50px">
-                    <div class="row">
-                        <div class="col">
-                            <label style="position: relative;right:340px;font-size: 20px">หมายเลขเตียง</label>
-                            <input type="text" class="form-control " name="hospitalName" value=""/><br>
+            <div style="position: relative;right:320px">
+                <h2><i class="fa fa-wrench" style="font-size:50px;" aria-hidden="true"></i>แก้ไขข้อมูลเตียงผู้ป่วย</h2>
+            </div>
+
+            <div  class="block-1">
+                <form method="get" action="">
+
+                    <div style="position: relative;top:50px">
+                        <div class="row">
+                            <div class="col">
+                                <label style="position: relative;right:340px;font-size: 20px">หมายเลขเตียง</label>
+                                <input type="text" class="form-control " name="hospitalName" value=""/><br>
+                            <div>
                         <div>
-                    <div>
 
-                    <div class="row" style="position: relative;top: 20px;">
-                        <div class="col">
-                            <label style="position: relative;right:330px;font-size: 20px;">ชื่อ - สกุล ผู้ป่วย</label>
-                            <input type="text" class="form-control" name="hospitalLocation" value=""/><br>
+                        <div class="row" style="position: relative;top: 20px;">
+                            <div class="col">
+                                <label style="position: relative;right:330px;font-size: 20px;">ชื่อ - สกุล ผู้ป่วย</label>
+                                <input type="text" class="form-control" name="hospitalLocation" value=""/><br>
+                            <div>
                         <div>
-                    <div>
-                    <div class="row" style="position: relative;top: 20px;">
-                        <div class="col">
-                            <label style="position: relative;right:320px;font-size: 20px;">วันที่เข้ารับการรักษา</label>
-                            <input type="date" class="form-control" name="hospitalPhonenumber" value=""/><br>
+                        <div class="row" style="position: relative;top: 20px;">
+                            <div class="col">
+                                <label style="position: relative;right:320px;font-size: 20px;">วันที่เข้ารับการรักษา</label>
+                                <input type="date" class="form-control" name="hospitalPhonenumber" value=""/><br>
+                            <div>
                         <div>
-                    <div>
 
 
-                    <input type="hidden"name="controller"value=""/>
-                    <input type="hidden" name="oldid" value=""/> <!--ใส่ id-->
-                    <div class="row" style="position: relative;top: 20px;">     
-                        <div class="col">   
-                            <button class="btn btn-primary" type= "submit"name="action"value="">อัพเดต</button>
-                            <button class="btn btn-primary" type= "submit"name="action"value="">ย้อนกลับ</button>
+                        <input type="hidden"name="controller"value=""/>
+                        <input type="hidden" name="oldid" value=""/> <!--ใส่ id-->
+                        <div class="row" style="position: relative;top: 20px;">     
+                            <div class="col">   
+                                <button class="btn btn-primary" type= "submit"name="action"value="">อัพเดต</button>
+                                <button class="btn btn-primary" type= "submit"name="action"value="">ย้อนกลับ</button>
+                            <div>
                         <div>
-                    <div>
-
-                <div>                   
-            </form>
-        </div>
+                    <div>   
+                                        
+                </form>
+            </div>
     </div>
     </center>
 </body>
