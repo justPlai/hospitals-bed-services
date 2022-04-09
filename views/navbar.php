@@ -53,7 +53,7 @@
 <div id="navbar-main">
     <nav class="navbar">
         <div class="navbar-mid">
-            <a class="main-button" href="http://localhost/hospitals-bed-services/views/">
+            <a class="main-button" href="http://localhost/hospitals-bed-services/views/main/">
                 <img src="../../img/hospitalsBedServicesIcon.png" height="65px" style="margin-right: 10px;">
                 Hospitals Bed Services
             </a>
@@ -83,7 +83,7 @@
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
-            <a class="navbar-brand-right" href="#">
+            <a class="navbar-brand-right" href="http://localhost/hospitals-bed-services/views/login.php">
                 Login
                 <div id="admin-only">admin only</div>
             </a>
