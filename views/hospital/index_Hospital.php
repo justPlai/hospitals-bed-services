@@ -64,8 +64,8 @@ body {
                         <td>กรุงเทพ</td>
                         <td>012345678</td>
                         <td>9</td>
-                        <td><a  class="btn btn-primary" href="#">📝</a></td>
-                        <td><a  class="btn btn-primary" href="#">📝</a></td>
+                        <td><a  class="btn btn-primary" href="http://localhost/hospitals-bed-services/views/detailbed/index_Detailbed.php">📝</a></td>
+                        <td><a  class="btn btn-primary" href="http://localhost/hospitals-bed-services/views/hospital/updateHospital.php">📝</a></td>
                     </tr>
             </tbody>
         </table>

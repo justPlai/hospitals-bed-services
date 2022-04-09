@@ -59,7 +59,7 @@ body {
                     <td>กลมชนมก ศรีหาย</td>
                     <td>9 ต.ค. 2543</td>
                     <td>พบว่าสมองหายไป</td>
-                    <td><a class="btn btn-primary" href="#">✍️</a></td>
+                    <td><a class="btn btn-primary" href="http://localhost/hospitals-bed-services/views/detailbed/updateDetailbed.php">✍️</a></td>
                 </tr>
             </tbody>
         </table>
