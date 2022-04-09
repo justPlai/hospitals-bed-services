@@ -15,7 +15,6 @@
 <?php 
         require_once("../../navbar.php")
 ?>
-
 <body>
     <div class="container mt-5">
 
