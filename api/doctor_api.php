@@ -1,5 +1,5 @@
 <?php
-class hospital_api
+class doctor_api
 {
 
     public function __construct()
@@ -9,7 +9,7 @@ class hospital_api
     public static function getAll()
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "http://158.108.207.7:8080/hospitals/rest/services/hospitals");
+        curl_setopt($ch, CURLOPT_URL, "http://158.108.207.7:8080/hospitals/rest/services/doctors");
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
@@ -22,7 +22,7 @@ class hospital_api
     public static function getById($id)
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "http://158.108.207.7:8080/hospitals/rest/services/hospitals/$id");
+        curl_setopt($ch, CURLOPT_URL, "http://158.108.207.7:8080/hospitals/rest/services/doctors/$id");
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
@@ -32,10 +32,10 @@ class hospital_api
         return $obj['result'][0];
     }
 
-    public static function create($hospital_name, $hospital_location, $hospital_phonenumber)
+    public static function create($doctor_firstname, $doctor_lastname, $doctor_phonenumber, $hospital)
     {
-        $url = "http://158.108.207.7:8080/hospitals/rest/services/hospitals";
-        $data = array('hospitalName' => $hospital_name, 'hospitalLocation' => $hospital_location, 'hospitalPhonenumber' => $hospital_phonenumber);
+        $url = "http://158.108.207.7:8080/hospitals/rest/services/doctors";
+        $data = array('doctorFirstname' => $doctor_firstname, 'doctorLastname' => $doctor_lastname, 'doctorPhonenumber' => $doctor_phonenumber, 'hospital' => $hospital);
         $data_json = json_encode($data);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -48,10 +48,10 @@ class hospital_api
         // echo $response;
     }
 
-    public static function update($hospital_id, $hospital_name, $hospital_location, $hospital_phonenumber)
+    public static function update($doctor_id, $doctor_firstname, $doctor_lastname, $doctor_phonenumber, $hospital)
     {
         $url = "http://158.108.207.7:8080/hospitals/rest/services/hospitals";
-        $data = array('hospitalId' => $hospital_id, 'hospitalName' => $hospital_name, 'hospitalLocation' => $hospital_location, 'hospitalPhonenumber' => $hospital_phonenumber);
+        $data = array('doctorId' => $doctor_id, 'doctorFirstname' => $doctor_firstname, 'doctorLastname' => $doctor_lastname, 'doctorPhonenumber' => $doctor_phonenumber, 'hospital' => $hospital);
         $data_json = json_encode($data);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
