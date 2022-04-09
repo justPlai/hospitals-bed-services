@@ -1,5 +1,5 @@
 <?php
-class patient_api
+class rtpcr_api
 {
 
     public function __construct()
@@ -9,7 +9,7 @@ class patient_api
     public static function getAll()
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://soa-project-final.herokuapp.com/api/patients");
+        curl_setopt($ch, CURLOPT_URL, "https://soa-project-final.herokuapp.com/api/rtpcrs");
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
@@ -22,7 +22,7 @@ class patient_api
     public static function getById($id)
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://soa-project-final.herokuapp.com/api/patients/$id");
+        curl_setopt($ch, CURLOPT_URL, "https://soa-project-final.herokuapp.com/api/rtpcrs/$id");
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $output = curl_exec($ch);
@@ -32,10 +32,10 @@ class patient_api
         return $obj['body'][0];
     }
 
-    // public static function create($firstName, $lastName, $BOD, $IDCard, $createDate)
+    // public static function create($patientID, $officerID, $labID, $result, $detail, $createDate)
     // {
-    //     $url = "https://soa-project-final.herokuapp.com/api/patients";
-    //     $data = array('firstName' => $firstName, 'lastName' => $lastName, 'BOD' => $BOD, 'IDCard' => $IDCard, 'createDate' => $createDate);
+    //     $url = "https://soa-project-final.herokuapp.com/api/rtpcrs";
+    //     $data = array('patientID' => $patientID, 'officerID' => $officerID, 'labID' => $labID, 'result' => $result, 'detail' => $detail, 'createDate' => $createDate);
     //     $data_json = json_encode($data);
     //     $ch = curl_init();
     //     curl_setopt($ch, CURLOPT_URL, $url);
@@ -48,10 +48,10 @@ class patient_api
     //     // echo $response;
     // }
 
-    // public static function update($_id, $firstName, $lastName, $BOD, $IDCard, $createDate)
+    // public static function update($_id, $patientID, $officerID, $labID, $result, $detail, $createDate)
     // {
-    //     $url = "https://soa-project-final.herokuapp.com/api/patients";
-    //     $data = array('_id' => $_id, 'firstName' => $firstName, 'lastName' => $lastName, 'BOD' => $BOD, 'IDCard' => $IDCard, 'createDate' => $createDate);
+    //     $url = "https://soa-project-final.herokuapp.com/api/rtpcrs";
+    //     $data = array('_id' => $_id, 'officerID' => $officerID, 'labID' => $labID, 'result' => $result, 'detail' => $detail, 'createDate' => $createDate);
     //     $data_json = json_encode($data);
     //     $ch = curl_init();
     //     curl_setopt($ch, CURLOPT_URL, $url);
