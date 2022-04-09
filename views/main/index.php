@@ -4,8 +4,6 @@
         margin-top: 20%;
     }
 
-    #search-form {}
-
     input[type=text] {
         width: 40%;
         font-size: 250%;
