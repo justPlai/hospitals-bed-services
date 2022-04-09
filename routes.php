@@ -1,7 +1,7 @@
 <?php
 $controllers = array(
     'pages' => ['home', 'error'],
-    'admin' => ['index', 'signIn', 'signOut']
+    'hospital' => ['index', 'updatePage']
 );
 function call($controller, $action)
 {
@@ -11,6 +11,11 @@ function call($controller, $action)
             require_once("models/hospitalModel.php");
             require_once("api/hospital_api.php");
             $controller = new PagesController();
+            break;
+        case "hospital":
+            require_once('api/hospital_api.php');
+            require_once("models/hospitalModel.php");
+            $controller = new HospitalController();
             break;
     }
     $controller->{$action}();

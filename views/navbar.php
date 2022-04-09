@@ -53,12 +53,12 @@
 <div id="navbar-main">
     <nav class="navbar">
         <div class="navbar-mid">
-            <a class="main-button" href="http://localhost/hospitals-bed-services/views/main/">
+            <a class="main-button" href="?controller=pages&action=home">
                 <img src="../../img/hospitalsBedServicesIcon.png" height="65px" style="margin-right: 10px;">
                 Hospitals Bed Services
             </a>
             <div id="line"></div>
-            <a class="navbar-brand" href="http://localhost/hospitals-bed-services/views/hospital/index_Hospital.php">
+            <a class="navbar-brand" href="?controller=hospital&action=index">
                 รายชื่อทั้งหมด
             </a>
             <div class="navbar-brand" href="#"></div>
