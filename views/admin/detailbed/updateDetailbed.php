@@ -16,7 +16,6 @@
         require_once("../../navbar.php")
 ?>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=K2D:wght@500&display=swap');
 html,
 body {
 	height: 100%;
@@ -53,7 +52,9 @@ input[type=date] {
 <body>
     <center>
         <div>
-        <h2>แก้ไขข้อมูลเตียงผู้ป่วย</h2>
+        <div style="position: relative;right:320px">
+            <h2><i class="fa fa-wrench" style="font-size:50px;" aria-hidden="true"></i>แก้ไขข้อมูลเตียงผู้ป่วย</h2>
+        </div>
         <div  class="block-1">
             <form method="get" action="">
 
