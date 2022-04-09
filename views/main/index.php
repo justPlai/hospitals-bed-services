@@ -1,4 +1,34 @@
+<style>
+    #search {
+        margin-left: 10%;
+        margin-top: 20%;
+    }
 
+    #search-form {}
+
+    input[type=text] {
+        width: 40%;
+        font-size: 250%;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    #magnify {
+        margin-left: 2%;
+        margin-bottom: 1%;
+        border-style: solid;
+        border-color: #0094FF;
+        background-color: BlanchedAlmond;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    #search-button{
+        font-size: 200%;
+        margin-left: 10px;
+        border-radius: 20px;
+        padding: 10px;
+    }
+</style>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +47,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <script src="https://unpkg.com/feather-icons"></script>
+
+
     <!-- <script src="sweetalert2.all.min.js"></script> -->
 
 </head>
@@ -26,8 +59,10 @@ require_once("./navbar.php")
 
 <body>
     <div id="search">
-        <form>
-            <input type="text" value="" placeholder="ชื่อโรงพยาบาลสนาม..."/>
+        <form id="search-form">
+            <input type="text" value="" placeholder="ชื่อโรงพยาบาลสนาม..." />
+            <button type="submit" id="search-button">ค้นหา</button>
+            <!-- <img type="submit" id="magnify" src="../img/magnify.png" /> -->
         </form>
     </div>
 </body>
