@@ -7,7 +7,7 @@ function call($controller, $action)
 {
     require_once("controllers/" . $controller . "_controller.php");
     switch ($controller) {
-        case "pages":
+        case "pages":require_once("api/hospital_api.php");
             $controller = new PagesController();
             break;
     }

@@ -27,6 +27,17 @@
         padding: 10px;
     }
 </style>
+<?php
+if (isset($_GET['controller']) && isset($_GET['action'])) {
+  $controller = $_GET['controller'];
+  $action = $_GET['action'];
+} else {
+  $controller = 'pages';
+  $action = 'home';
+}
+// session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,9 +62,12 @@
     <!-- <script src="sweetalert2.all.min.js"></script> -->
 
 </head>
+<?php require_once("../../routes.php") ?>
 <?php
 require_once("../navbar.php")
 ?>
+
+
 
 <body>
     <div id="search">

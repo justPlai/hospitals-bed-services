@@ -2,11 +2,11 @@
 class PagesController
 {
     public function home()
-    {
-        require_once('views/main/index.php');
+    {   
+        require_once('index.php');
     }
     public function error()
     {
-        require_once('views/main/error.php');
+        require_once('error.php');
     }
 }
