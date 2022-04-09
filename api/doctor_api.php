@@ -32,10 +32,10 @@ class doctor_api
         return $obj['result'][0];
     }
 
-    public static function create($doctor_firstname, $doctor_lastname, $doctor_phonenumber, $hospital)
+    public static function create($doctor_firstname, $doctor_lastname, $doctor_phonenumber, $hospital_id)
     {
         $url = "http://158.108.207.7:8080/hospitals/rest/services/doctors";
-        $data = array('doctorFirstname' => $doctor_firstname, 'doctorLastname' => $doctor_lastname, 'doctorPhonenumber' => $doctor_phonenumber, 'hospital' => $hospital);
+        $data = array('doctorFirstname' => $doctor_firstname, 'doctorLastname' => $doctor_lastname, 'doctorPhonenumber' => $doctor_phonenumber, 'hospital' => array('hospitalId'=> $hospital_id));
         $data_json = json_encode($data);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -48,10 +48,10 @@ class doctor_api
         // echo $response;
     }
 
-    public static function update($doctor_id, $doctor_firstname, $doctor_lastname, $doctor_phonenumber, $hospital)
+    public static function update($doctor_id, $doctor_firstname, $doctor_lastname, $doctor_phonenumber, $hospital_id)
     {
         $url = "http://158.108.207.7:8080/hospitals/rest/services/hospitals";
-        $data = array('doctorId' => $doctor_id, 'doctorFirstname' => $doctor_firstname, 'doctorLastname' => $doctor_lastname, 'doctorPhonenumber' => $doctor_phonenumber, 'hospital' => $hospital);
+        $data = array('doctorId' => $doctor_id, 'doctorFirstname' => $doctor_firstname, 'doctorLastname' => $doctor_lastname, 'doctorPhonenumber' => $doctor_phonenumber, 'hospital' => array('hospitalId'=> $hospital_id));
         $data_json = json_encode($data);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
