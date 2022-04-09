@@ -63,13 +63,13 @@
                     </div>
                 </div>
             </a>
-            <div id="line"></div>
-            <a class="navbar-brand" href="#">
+            <div id="line" style="position:relative;right:220px"></div>
+            <a class="navbar-brand" href="#" style="position:relative;right:220px">
                 รายชื่อทั้งหมด
             </a>
             <a class="navbar-brand-right"href="#">
-                <div  style="position:relative;left:920px;">Login</div>
-                <div id="admin-only" style="position:relative;left:905px;">admin only</div>
+                <div  style="position:relative;left:680px;">Login</div>
+                <div id="admin-only" style="position:relative;left:670px;">admin only</div>
             </a>
 
         </div>
