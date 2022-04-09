@@ -15,7 +15,14 @@
 <?php 
         require_once("../navbar.php")
 ?>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+body {
+    font-family: 'Sarabun', sans-serif;
+  overflow: hidden;
+}
 
+</style>
 <body>
     <div class="container mt-5">
 

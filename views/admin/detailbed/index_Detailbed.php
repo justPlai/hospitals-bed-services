@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+body {
+    font-family: 'Sarabun', sans-serif;
+  overflow: hidden;
+}
+
+</style>
 <?php 
         require_once("../../navbar.php")
 ?>

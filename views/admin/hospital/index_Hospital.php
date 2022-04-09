@@ -15,6 +15,12 @@
 </head>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+body {
+    font-family: 'Sarabun', sans-serif;
+  overflow: hidden;
+}
+
 </style>
 
 <?php 

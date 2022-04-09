@@ -14,6 +14,8 @@
         require_once("../../navbar.php")
 ?>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
 html,
 body {
 	height: 100%;
@@ -21,6 +23,7 @@ body {
 
 body {
 	margin: 0;
+    font-family: 'Sarabun', sans-serif;
 	background: "white";
     background-repeat: no-repeat;
     background-attachment: fixed;
