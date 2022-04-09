@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
-<?php 
-        require_once("../navbar.php")
-?>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
 body {
@@ -23,6 +20,9 @@ body {
 }
 
 </style>
+<?php 
+        require_once("../../navbar.php")
+?>
 <body>
     <div class="container mt-5">
 
@@ -50,6 +50,7 @@ body {
                     <th>ชื่อ-สกุล ผู้ป่วย</th>
                     <th>วันที่เข้ารับการรักษา</th>
                     <th>ผลการตรวจ</th>
+                    <th>แก้ไข</th>
                 </tr><!--รอ service ครบค่อยใส่ foreach-->
             </thead>
             <tbody class="text-center">
@@ -58,6 +59,7 @@ body {
                     <td>กลมชนมก ศรีหาย</td>
                     <td>9 ต.ค. 2543</td>
                     <td>พบว่าสมองหายไป</td>
+                    <td><a class="btn btn-primary" href="#">✍️</a></td>
                 </tr>
             </tbody>
         </table>
