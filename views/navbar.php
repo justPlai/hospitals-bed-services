@@ -54,44 +54,27 @@
     <nav class="navbar">
         <div class="navbar-mid">
             <a class="main-button" href="#">
-                <img src="../img/hospitalsBedServicesIcon.png" height="65px" style="margin-right: 10px;">
-                Hospitals Bed Services
+                <div class="row">
+                    <div class="col">
+                        <img src="https://sv1.picz.in.th/images/2022/04/09/8jsMgW.png" height="65px" style="margin-right: 10px;">  
+                    </div>
+                    <div class="col" style="position:relative;right:220px;width:500px;top:15px">
+                        <p>Hospitals Bed Services</p>
+                    </div>
+                </div>
             </a>
             <div id="line"></div>
             <a class="navbar-brand" href="#">
                 รายชื่อทั้งหมด
             </a>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <a class="navbar-brand-right" href="#">
-                Login
-                <div id="admin-only">admin only</div>
+            <a class="navbar-brand-right"href="#">
+                <div  style="position:relative;left:920px;">Login</div>
+                <div id="admin-only" style="position:relative;left:905px;">admin only</div>
             </a>
 
         </div>
         
     </nav>
 </div>
-<p>navbar</p>
 
 </html>
