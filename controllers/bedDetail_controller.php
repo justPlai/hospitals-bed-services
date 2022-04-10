@@ -7,6 +7,7 @@ class BedDetailController
         $bedDetailList = bedDetail::getByHospitalId($hospital_id);
         require_once('views/detailbed/index_Detailbed.php');
     }
+    
     public function createPage(){
         $hospital_id = $_GET['hospital_id'];
         $patientList = patientModel::getAll();
@@ -48,11 +49,19 @@ class BedDetailController
         BedDetailController::index();
     }
 
+    public function deletePage()
+    {
+        $bedDetail_id = $_GET['bedDetail_id'];
+        $bedDetail = bedDetail::get($bedDetail_id);
+        // echo $bedDetail->bedDetail_id;
+        require_once('views/detailbed/deletePage.php');
+    }
+
     public function delete()
     {
-        $bedDetail_id = $_POST['bedDetail_id'];
+        $bedDetail_id = $_GET['bedDetail_id'];
         bedDetail::delete($bedDetail_id);
-        $hospital_id = $_POST['hospital_id'];
+        $hospital_id = $_GET['hospital_id'];
         BedDetailController::index();
     }
 }

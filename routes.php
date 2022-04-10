@@ -3,7 +3,7 @@ $controllers = array(
     'pages' => ['home', 'error'],
     'account' => ['index', 'login', 'logout'],
     'hospital' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete'],
-    'bedDetail' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete'],
+    'bedDetail' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'deletePage', 'delete'],
     'bed' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete'],
     'doctor' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete']
 );

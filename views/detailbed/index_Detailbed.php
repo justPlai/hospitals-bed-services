@@ -68,17 +68,10 @@
                         if ($_SESSION['token'] == 1) {
                             echo "
                             <td><a href=?controller=bedDetail&action=updatePage&id=$bedDetail->bedDetail_id >✍️</a></td>
-                            <td>
-                            <form method=POST action=?controller=bedDetail&action=delete>
-                                <input name=bedDetail_id type=hidden value=" . $bedList->bed_id . ">
-                                <input name=hospital_id type=hidden value=" . $bedDetail->hospital_id . " />
-                                <a type=button class=show_confirm data-toggle=tooltip test=" . $bedDetail->bedDetail_id . ">🚮</a>
-                            </form>
-                            </td>    
+                            <td><a href=?controller=bedDetail&action=deletePage&id=$bedDetail->bedDetail_id >🚮</a></td>    
                             ";
                         }
                         ?>
-
                     <?php echo "
                         </tr>";
                     }
