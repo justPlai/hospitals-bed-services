@@ -24,18 +24,31 @@
     select,
     textarea {
         width: 800px;
-        height: 50px;
+        height: 40px;
         border: 1px solid #ccc;
         border-radius: 4px;
         resize: vertical;
+        font-size: 20px;
     }
 
     input[type=date] {
         width: 800px;
+        height: 40px;
         padding: 12px;
         border: 1px solid #ccc;
         border-radius: 4px;
         resize: vertical;
+        font-size: 20px;
+    }
+
+    label {
+        position: relative;
+        font-size: 25px;
+    }
+
+    .row {
+        position: relative;
+        top: 20px;
     }
 </style>
 
@@ -43,50 +56,43 @@
     <center>
         <div>
 
-            <div style="position: relative;right:320px">
+            <div style="position: relative; right:320px; margin-top:3%">
                 <h2><i class="fa fa-wrench" style="font-size:50px;" aria-hidden="true"></i>แก้ไขข้อมูลเตียงผู้ป่วย</h2>
             </div>
 
             <div class="block-1">
                 <form method="get" action="">
 
-                    <div style="position: relative;top:50px">
+                    <div>
                         <div class="row">
                             <div class="col">
-                                <label style="position: relative;right:340px;font-size: 20px">หมายเลขเตียง</label>
-                                <input type="text" class="form-control " name="bedDetail_id" value="<?php echo $bedDetail->bedDetail_id ?>" disabled /><br>
+                                <label style="margin-right:65%;">หมายเลขเตียง</label>
+                                <input type="text" class="form-control " name="bed_id" value="<?php echo $bedDetail->bed_id ?>" /><br>
                             </div>
                         </div>
 
-                        <div class="row" style="position: relative;top: 20px;">
+                        <div class="row">
                             <div class="col">
-                                <label style="position: relative;right:330px;font-size: 20px;">ชื่อผู้ป่วย</label>
-                                <input type="text" class="form-control" name="firstname" <?php echo "value=$bedDetail->firstName" ?> /><br>
+                                <label style="margin-right:65%;">ชื่อ - สกุลผู้ป่วย</label>
+                                <input type="text" class="form-control" name="patient_id" <?php echo "value=$bedDetail->patient_id" ?> /><br>
                             </div>
                         </div>
 
-                        <div class="row" style="position: relative;top: 20px;">
+                        <div class="row">
                             <div class="col">
-                                <label style="position: relative;right:330px;font-size: 20px;">สกุล ผู้ป่วย</label>
-                                <input type="text" class="form-control" name="lastname" <?php echo "value=$bedDetail->lastName" ?> /><br>
-                            </div>
-                        </div>
-
-                        <div class="row" style="position: relative;top: 20px;">
-                            <div class="col">
-                                <label style="position: relative;right:320px;font-size: 20px;">วันที่เข้ารับการรักษา</label>
-                                <input type="date" class="form-control" name="hospitalPhonenumber" <?php echo "value=$bedDetail->date" ?> /><br>
+                                <label style="margin-right:75%;">หมอ</label>
+                                <input type="date" class="form-control" name="doctor_id" <?php echo "value=$bedDetail->doctor_id" ?> /><br>
                             </div>
                         </div>
 
 
-                        <input type="hidden" name="controller" value="" />
-                        <input type="hidden" name="oldid" value="" />
+                        <input type="hidden" name="controller" value="bedDetail" />
+                        <input type="hidden" name="id" <?php echo "value=$id"; ?> />
                         <!--ใส่ id-->
-                        <div class="row" style="position: relative;top: 20px;">
+                        <div class="row">
                             <div class="col">
-                                <button class="btn btn-primary" type="submit" name="action" value="">อัพเดต</button>
-                                <button class="btn btn-primary" type="submit" name="action" value="">ย้อนกลับ</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="update">อัพเดต</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="index">ย้อนกลับ</button>
                             </div>
                         </div>
                     </div>

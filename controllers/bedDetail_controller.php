@@ -13,4 +13,16 @@ class BedDetailController
         $bedDetail = bedDetail::get($id);
         require_once('views/detailbed/updateDetailbed.php');
     }
+
+    public function update()
+    {
+        $bedDetail_id = $_GET['bedDetail_id'];
+        $patient_id = $_GET['patient_id'];
+        $bed_id = $_GET['bed_id'];
+        $doctor_id = $_GET['doctor_id'];
+        bedDetail::update($bedDetail_id, $patient_id, $bed_id, $doctor_id);
+
+        $id = $_GET['id'];
+        require_once('views/detailbed/updateDetailbed.php');
+    }
 }
