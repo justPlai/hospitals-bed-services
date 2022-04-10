@@ -24,6 +24,9 @@
                 <input type="hidden" name="controller" value="hospital">
                 <input type="hidden" name="action" value="index">
             </div>
+            <div class="col mt-4">
+            <a class="btn btn-primary" href="?controller=hospital&action=create" style='left: 60%; position:relative;' >เพิ่มเตียงโรงพยาบาล</a><br>
+            </div>
         </div>
 
         <table class="table table-hover" id="myTable">
