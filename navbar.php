@@ -47,6 +47,14 @@
         font-family: sans-serif;
     }
 
+    #logout{
+        margin-top: 10px;
+        background-color: #DCDCDC;
+        color: #000000;
+        border-radius: 20px;
+        padding-top: 20px;
+    }
+
 </style>
 
 <div id="navbar-main">
@@ -60,14 +68,30 @@
             <a class="navbar-brand" href="?controller=hospital&action=index">
                 รายชื่อทั้งหมด
             </a>
-            <a class="navbar-brand" href="?controller=bed&action=index">
+            <?php 
+            if($_SESSION['token'] == 1){
+                echo "
+                <a class=navbar-brand href=?controller=bed&action=index>
                 เตียงทั้งหมด
-            </a>
-            <a class="navbar-brand" href="?controller=doctor&action=index">
+                </a>
+                <a class=navbar-brand href=?controller=doctor&action=index>
                 รายชื่อหมอทั้งหมด
-            </a>
+                </a>";
+            }else{
+                echo "
+                <div class=navbar-brand href=#></div>
+                <div class=navbar-brand href=#></div>
+                <div class=navbar-brand href=#></div>
+                <div class=navbar-brand href=#></div>
+                <div class=navbar-brand href=#></div>
+                <div class=navbar-brand href=#></div>
+                <div class=navbar-brand href=#></div>
+                <div class=navbar-brand href=#></div>
+                ";
+            }
+            
+            ?>
 
-
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
@@ -79,14 +103,29 @@
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <a class="navbar-brand-right" href="?controller=account&action=index">
-                Login
-                <div id="admin-only">admin only</div>
-            </a>
+            
+            
+            <?php
+                if($_SESSION['token'] != 1){
+                    echo "
+                    <div class=navbar-brand href=#></div>
+                    <div class=navbar-brand href=#></div>
+                    <a class=navbar-brand-right href=?controller=account&action=index>
+                    Login
+                    <div id=admin-only>admin only</div>
+                    </a>
+                    ";
+                }else{
+                    echo "
+                    <div style=margin-top: 20px; class=navbar-brand href=#>".$_SESSION['firstname']."</div>
+                    <div class=navbar-brand href=#></div>
+                    <a id=logout style=margin-top: 10px; class=navbar-brand-right href=?controller=account&action=logout>
+                    Logout
+                    </a>
+                    ";
+                }
+            ?>
+            
 
         </div>
         
