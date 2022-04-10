@@ -23,7 +23,7 @@ class doctorModel{
             $doctorLastname = $item['doctorLastname'];
             $doctorPhonenumber = $item['doctorPhonenumber'];
             $hostpitalId = $item['hospital']['hospitalId'];
-            $hospital = hospital_api::getById($hostpitalId);
+
             $doctorList[] = new doctorModel($doctorId, $doctorFirstname, $doctorLastname, $doctorPhonenumber, $hostpitalId);
         }
 
@@ -37,7 +37,7 @@ class doctorModel{
         $doctorLastname = $item['doctorLastname'];
         $doctorPhonenumber = $item['doctorPhonenumber'];
         $hostpitalId = $item['hospital']['hospitalId'];
-        $hospital = hospital_api::getById($hostpitalId);
+        
         return new doctorModel($doctorId, $doctorFirstname, $doctorLastname, $doctorPhonenumber, $hostpitalId);
     }
 

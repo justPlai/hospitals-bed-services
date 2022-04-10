@@ -11,7 +11,6 @@ class BedDetailController
     {
         $id = $_GET['id'];
         $patientList = patientModel::getAll();
-        echo $patientList[0]->firstName;
         $doctorList = doctorModel::getAll();
         $bedList = bed::getAll();
         $bedDetail = bedDetail::get($id);
@@ -24,9 +23,10 @@ class BedDetailController
         $patient_id = $_GET['patient_id'];
         $bed_id = $_GET['bed_id'];
         $doctor_id = $_GET['doctor_id'];
+        echo "$bedDetail_id, $patient_id, $bed_id, $doctor_id";
         bedDetail::update($bedDetail_id, $patient_id, $bed_id, $doctor_id);
 
-        $id = $_GET['id'];
-        require_once('views/detailbed/updateDetailbed.php');
+        $id = $_GET['hospital_id'];
+        BedDetailController::index();
     }
 }
