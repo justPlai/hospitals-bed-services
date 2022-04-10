@@ -47,7 +47,7 @@
                         <td>$hospital->hospital_location</td>
                         <td>$hospital->hospital_phonenumber</td>
                         <td>จำนวนผู้ป่วยคงเหลือ</td>
-                        <td><a type=button href=?controller=bedDetail&action=index&id=$hospital->hospital_id >📝</a></td>
+                        <td><a type=button href=?controller=bedDetail&action=index&hospital_id=$hospital->hospital_id >📝</a></td>
                         <td><a type=button href=?controller=hospital&action=updatePage&id=$hospital->hospital_id  >📝</a></td>
                         </tr>";
                 }
