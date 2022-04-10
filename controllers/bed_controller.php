@@ -28,4 +28,16 @@ class BedController
         bed::delete($id);
         BedController::index();
     }
+    public function createPage()
+    {
+        $hospitalList = hospital::getAll();
+        require_once('views/bed/newBed.php');
+    }
+    public function create()
+    {
+        $room_id=$_GET['room_id'];
+        $hospital_id=$_GET['hospital_id'];
+        bed::add($room_id,$hospital_id);   
+        BedController::index();
+    }
 }
