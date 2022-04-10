@@ -116,7 +116,7 @@ class bed
 
         return $count;
     }
-
+    //นับแต่ละโรงบาล
     public static function countList(){
         $hospitalList = hospital::getAll();
         $countBedList = [];
@@ -126,7 +126,7 @@ class bed
 
         return $countBedList;
     }
-
+    //นับเตียงทั้งหมด
     public static function count(){
         $hospitalList = hospital::getAll();
         $count = 0;

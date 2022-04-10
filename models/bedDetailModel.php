@@ -271,7 +271,7 @@ class bedDetail
 
         return $countBedDetailList;
     }
-
+    //ผู้ป่วยทั้งหมด
     public static function count(){
         $hospitalList = hospital::getAll();
         $count = 0;
@@ -281,7 +281,7 @@ class bedDetail
 
         return $count;
     }
-
+    //โรงบาลที่มีผู้ป่วยมากสุด
     public static function topHospital(){
         $hospitalList = hospital::getAll();
         $hospital_id = 0;

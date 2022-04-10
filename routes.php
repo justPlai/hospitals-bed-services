@@ -15,6 +15,7 @@ function call($controller, $action)
             require_once("models/hospitalModel.php");
             require_once("api/hospital_api.php");
             require_once("models/bedModel.php");
+            require_once("models/bedDetailModel.php");
             $controller = new PagesController();
             break;
         case "account":
