@@ -1,11 +1,24 @@
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("img/3.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 <body>
-    <div id="search">
-        <form id="search-form">
-            <input type="text" value="" placeholder="ชื่อโรงพยาบาลสนาม..." />
-            <button type="submit" id="search-button">ค้นหา</button>
-            <!-- <img type="submit" id="magnify" src="../img/magnify.png" /> -->
-        </form>
-    </div>
+    <div class="bg"></div>
 </body>
 
 </html>
