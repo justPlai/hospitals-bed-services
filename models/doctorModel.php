@@ -24,7 +24,7 @@ class doctorModel{
             $doctorPhonenumber = $item['doctorPhonenumber'];
             $hostpitalId = $item['hospital']['hospitalId'];
             $hospital = hospital_api::getById($hostpitalId);
-            $doctorList = new doctorModel($doctorId, $doctorFirstname, $doctorLastname, $doctorPhonenumber, $hostpitalId);
+            $doctorList[] = new doctorModel($doctorId, $doctorFirstname, $doctorLastname, $doctorPhonenumber, $hostpitalId);
         }
 
         return $doctorList;

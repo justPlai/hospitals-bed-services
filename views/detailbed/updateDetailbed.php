@@ -67,14 +67,33 @@
                         <div class="row">
                             <div class="col">
                                 <label style="margin-right:65%;">หมายเลขเตียง</label>
-                                <input type="text" class="form-control " name="bed_id" value="<?php echo $bedDetail->bed_id ?>" /><br>
+                                <select name="bed_id">
+                                    <?php foreach ($bedList as $bed) {
+                                        if ($bed->hospital_id == $bedDetail->hospital_id) {
+
+                                            echo "<option value = $bed->bed_id";
+                                            if ($bed->bed_id == $bedDetail->bed_id) {
+                                                echo " selected='selected'";
+                                            }
+                                            echo ">$bed->bed_id</option>";
+                                        }
+                                    } ?><br>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col">
                                 <label style="margin-right:65%;">ชื่อ - สกุลผู้ป่วย</label>
-                                <input type="text" class="form-control" name="patient_id" <?php echo "value=$bedDetail->patient_id" ?> /><br>
+                                <input type="text" class="form-control" name="patient_id" <?php echo "value=$bedDetail->patient_id" ?> />
+                                <select name="patient_id">
+                                    <?php foreach ($patientList as $patient) {
+                                        echo "<option value = $patient->patient_id";
+                                        if ($patient->patient_id == $bedDetail->patient_id) {
+                                            echo " selected='selected'";
+                                        }
+                                        echo ">$patient->firstName</option>";
+                                    } ?>
+                                    <br>
                             </div>
                         </div>
 
@@ -87,7 +106,7 @@
 
 
                         <input type="hidden" name="controller" value="bedDetail" />
-                        <input type="hidden" name="id" <?php echo "value=$id"; ?> />
+                        <input type="hidden" name="id" <?php echo "value=$bedDetail->hospital_id"; ?> />
                         <!--ใส่ id-->
                         <div class="row">
                             <div class="col">
