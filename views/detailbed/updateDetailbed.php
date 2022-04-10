@@ -54,34 +54,42 @@
                         <div class="row">
                             <div class="col">
                                 <label style="position: relative;right:340px;font-size: 20px">หมายเลขเตียง</label>
-                                <input type="text" class="form-control " name="hospitalName" value="" /><br>
-                                <div>
-                                    <div>
+                                <input type="text" class="form-control " name="bedDetail_id" value="<?php echo $bedDetail->bedDetail_id ?>" disabled /><br>
+                            </div>
+                        </div>
 
-                                        <div class="row" style="position: relative;top: 20px;">
-                                            <div class="col">
-                                                <label style="position: relative;right:330px;font-size: 20px;">ชื่อ - สกุล ผู้ป่วย</label>
-                                                <input type="text" class="form-control" name="hospitalLocation" value="" /><br>
-                                                <div>
-                                                    <div>
-                                                        <div class="row" style="position: relative;top: 20px;">
-                                                            <div class="col">
-                                                                <label style="position: relative;right:320px;font-size: 20px;">วันที่เข้ารับการรักษา</label>
-                                                                <input type="date" class="form-control" name="hospitalPhonenumber" value="" /><br>
-                                                                <div>
-                                                                    <div>
+                        <div class="row" style="position: relative;top: 20px;">
+                            <div class="col">
+                                <label style="position: relative;right:330px;font-size: 20px;">ชื่อผู้ป่วย</label>
+                                <input type="text" class="form-control" name="firstname" <?php echo "value=$bedDetail->firstName" ?> /><br>
+                            </div>
+                        </div>
+
+                        <div class="row" style="position: relative;top: 20px;">
+                            <div class="col">
+                                <label style="position: relative;right:330px;font-size: 20px;">สกุล ผู้ป่วย</label>
+                                <input type="text" class="form-control" name="lastname" <?php echo "value=$bedDetail->lastName" ?> /><br>
+                            </div>
+                        </div>
+
+                        <div class="row" style="position: relative;top: 20px;">
+                            <div class="col">
+                                <label style="position: relative;right:320px;font-size: 20px;">วันที่เข้ารับการรักษา</label>
+                                <input type="date" class="form-control" name="hospitalPhonenumber" <?php echo "value=$bedDetail->date" ?> /><br>
+                            </div>
+                        </div>
 
 
-                                                                        <input type="hidden" name="controller" value="" />
-                                                                        <input type="hidden" name="oldid" value="" />
-                                                                        <!--ใส่ id-->
-                                                                        <div class="row" style="position: relative;top: 20px;">
-                                                                            <div class="col">
-                                                                                <button class="btn btn-primary" type="submit" name="action" value="">อัพเดต</button>
-                                                                                <button class="btn btn-primary" type="submit" name="action" value="">ย้อนกลับ</button>
-                                                                                <div>
-                                                                                    <div>
-                                                                                        <div>
+                        <input type="hidden" name="controller" value="" />
+                        <input type="hidden" name="oldid" value="" />
+                        <!--ใส่ id-->
+                        <div class="row" style="position: relative;top: 20px;">
+                            <div class="col">
+                                <button class="btn btn-primary" type="submit" name="action" value="">อัพเดต</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="">ย้อนกลับ</button>
+                            </div>
+                        </div>
+                    </div>
 
                 </form>
             </div>

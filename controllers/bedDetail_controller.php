@@ -7,8 +7,10 @@ class BedDetailController
         $bedDetailList = bedDetail::getByHospitalId($id);
         require_once('views/detailbed/index_Detailbed.php');
     }
-    public function login()
+    public function updatePage()
     {
-        PagesController::home();
+        $id = $_GET['id'];
+        $bedDetail = bedDetail::get($id);
+        require_once('views/detailbed/updateDetailbed.php');
     }
 }
