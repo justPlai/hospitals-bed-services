@@ -255,7 +255,7 @@
           </div>
         </div>
         <input type="hidden" name="action" value="login" />
-        <input type="hidden" name="controller" value="admin" />
+        <input type="hidden" name="controller" value="acount" />
         <button type="submit" class="btn">เข้าสู่ระบบ</button>
       </form>
     </div>
