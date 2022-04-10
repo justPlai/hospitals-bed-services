@@ -6,7 +6,6 @@ class HospitalController
         
         $hospitalList = hospital::getAll();
         $countBed = bed::countList();
-        echo "---------------";
         $countBedDetail = bedDetail::countList();
 
         require_once('views/hospital/index_Hospital.php');
