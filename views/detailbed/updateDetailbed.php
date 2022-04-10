@@ -42,6 +42,7 @@
     }
 
     label {
+        margin-bottom: 10px;
         position: relative;
         font-size: 25px;
     }
@@ -77,36 +78,47 @@
                                             }
                                             echo ">$bed->bed_id</option>";
                                         }
-                                    } ?><br>
+                                    } ?></select>
                             </div>
-                        </div>
+                        </div><br>
 
                         <div class="row">
                             <div class="col">
                                 <label style="margin-right:65%;">ชื่อ - สกุลผู้ป่วย</label>
-                                <input type="text" class="form-control" name="patient_id" <?php echo "value=$bedDetail->patient_id" ?> />
                                 <select name="patient_id">
                                     <?php foreach ($patientList as $patient) {
-                                        echo "<option value = $patient->patient_id";
-                                        if ($patient->patient_id == $bedDetail->patient_id) {
+                                        echo "<option value = $patient->_id";
+                                        if ($patient->_id == $bedDetail->patient_id) {
                                             echo " selected='selected'";
                                         }
-                                        echo ">$patient->firstName</option>";
-                                    } ?>
-                                    <br>
+                                        echo ">$patient->firstName $patient->lastName</option>";
+                                    } ?></select>
+
                             </div>
-                        </div>
+                        </div><br>
 
                         <div class="row">
                             <div class="col">
                                 <label style="margin-right:75%;">หมอ</label>
-                                <input type="date" class="form-control" name="doctor_id" <?php echo "value=$bedDetail->doctor_id" ?> /><br>
+                                <select name="doctor_id">
+                                    <?php foreach ($doctorList as $doctor) {
+                                        if ($doctor->hostpitalId == $bedDetail->hospital_id) {
+
+                                            echo "<option value = $doctor->doctorId";
+                                            if ($bed->doctorId == $bedDetail->doctor_id) {
+                                                echo " selected='selected'";
+                                            }
+                                            echo ">$doctor->doctorFirstname $doctor->doctorLastname</option>";
+                                        }
+                                    } ?></select>
+
                             </div>
-                        </div>
+                        </div><br>
 
 
                         <input type="hidden" name="controller" value="bedDetail" />
-                        <input type="hidden" name="id" <?php echo "value=$bedDetail->hospital_id"; ?> />
+                        <input type="hidden" name="bedDetail_id" <?php echo "value=$bedDetail->bedDetail_id"; ?> />
+                        <input type="hidden" name="hospital_id" <?php echo "value=$bedDetail->hospital_id"; ?> />
                         <!--ใส่ id-->
                         <div class="row">
                             <div class="col">
