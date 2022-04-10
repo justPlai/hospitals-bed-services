@@ -70,18 +70,31 @@
         for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[0];
             td2 = tr[i].getElementsByTagName("td")[1];
+            td3 = tr[i].getElementsByTagName("td")[2];
             let x = 1;
+            let y = 1;
             if (td) {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
                     tr[i].style.display = "";
                     x = 0;
+                    y = 0;
+                }
+            }
+
+            if (x === 1 && y === 1) {
+                if (td2) {
+                    txtValue = td2.textContent || td2.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        x = 0;
+                    } 
                 }
             }
 
             if (x === 1) {
-                if (td2) {
-                    txtValue = td2.textContent || td2.innerText;
+                if (td3) {
+                    txtValue = td3.textContent || td3.innerText;
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
                     } else {
