@@ -63,7 +63,9 @@
             <a class="navbar-brand" href="?controller=bed&action=index">
                 เตียงทั้งหมด
             </a>
-            <div class="navbar-brand" href="#"></div>
+            <a class="navbar-brand" href="?controller=doctor&action=index">
+                รายชื่อหมอทั้งหมด
+            </a>
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
