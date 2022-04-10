@@ -235,7 +235,8 @@ class bedDetail
     public static function add($patient_id,$bed_id,$doctor_id)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `bedDetail` (`patient_id`, `bed_id`, `doctor_id`) VALUES ('$patient_id', '$bed_id', '$doctor_id');";
+        $date = date("Y-m-d");
+        $sql = "INSERT INTO `bedDetail` (`patient_id`, `bed_id`, `doctor_id`, `date`) VALUES ('$patient_id', '$bed_id', '$doctor_id', '$date');";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "Add success $result row";
