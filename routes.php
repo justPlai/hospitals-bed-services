@@ -2,8 +2,9 @@
 $controllers = array(
     'pages' => ['home', 'error'],
     'admin' => ['index', 'login'],
-    'hospital' => ['index', 'search', 'updatePage'],
-    'bedDetail' => ['index']
+    'hospital' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete'],
+    'bedDetail' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete'],
+    'bed' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete']
 );
 function call($controller, $action)
 {
@@ -36,6 +37,8 @@ function call($controller, $action)
             require_once("models/doctorModel.php");
             require_once("models/bedModel.php");
             $controller = new BedDetailController();
+        case "bed":
+            $controller;
     }
     $controller->{$action}();
 }
