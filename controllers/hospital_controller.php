@@ -16,16 +16,16 @@ class HospitalController
 
     public function updatePage()
     {
-        $id = $_GET['hospital_id'];
-        $hospital = hospital::getById($id);
+        $id = $_GET['id'];
+        $hospitalList = hospital::getById($id);
         require_once('views/hospital/updateHospital.php');
     }
     public function update()
     {
-        $id = $_GET['$hospital_id'];
-        $name = $_GET['$hospital_name'];
-        $location = $_GET['$hospital_location'];
-        $phonenumber = $_GET['$hospital_phonenumber'];
+        $id = $_GET['hospital_id'];
+        $name = $_GET['hospital_name'];
+        $location = $_GET['hospital_location'];
+        $phonenumber = $_GET['hospital_phonenumber'];
         hospital::update($id,$name,$location,$phonenumber);
         HospitalController ::index();
     }

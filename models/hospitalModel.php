@@ -36,7 +36,6 @@ class hospital
         $hospital_name = $item["hospitalName"];
         $hospital_location = $item["hospitalLocation"];
         $hospital_phonenumber = $item["hospitalPhonenumber"];
-
         return new hospital($hospital_id, $hospital_name, $hospital_location, $hospital_phonenumber);
     }
 
