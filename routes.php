@@ -23,6 +23,8 @@ function call($controller, $action)
         case "hospital":
             require_once('api/hospital_api.php');
             require_once("models/hospitalModel.php");
+            require_once("models/bedModel.php");
+            require_once("models/bedDetailModel.php");
             $controller = new HospitalController();
             break;
         case "bedDetail":
