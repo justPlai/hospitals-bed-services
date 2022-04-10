@@ -6,23 +6,38 @@ class bedDetail
     public $bed_id;
     public $doctor_id;
 
+    public $firstName;
+    public $lastName;
+    public $result;
+    public $createDate;
+
     public $doctorFirstname;
     public $doctorLastname;
     public $doctorPhonenumber;
     public $hospital;
 
+    public $room_id;
+    public $hospital_id;
     public $hospital_name;
     public $hospital_location;
     public $hospital_phonenumber;
 
-    public function __construct($bedDetail_id, $patient_id,$firstName,$lastName,$result,$createDate, $bed_id,$doctor_id,
-    $doctorFirstname,$doctorLastname,$doctorPhonenumber,$hospital,$room_id, $hospital_id,
-    $hospital_name,$hospital_location,$hospital_phonenumber)
+    public function __construct($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+    $firstName,$lastName,$result,$createDate,
+    $doctorFirstname,$doctorLastname,$doctorPhonenumber,
+    $hospital,$room_id, $hospital_id,
+    $hospital_name,$hospital_location,
+    $hospital_phonenumber)
     {
         $this->bedDetail_id = $bedDetail_id;
         $this->patient_id = $patient_id;
         $this->bed_id = $bed_id;
         $this->doctor_id = $doctor_id;
+
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->result = $result;
+        $this->createDate = $createDate;
 
         $this->doctorFirstname = $doctorFirstname;
         $this->doctorLastname = $doctorLastname;
@@ -79,9 +94,12 @@ class bedDetail
             $hospital_location = $listbed->hospital_location;
             $hospital_phonenumber = $listbed->hospital_phonenumber;
 
-            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$firstName,$lastName,$result,$createDate, $bed_id,$doctor_id,
-            $doctorFirstname,$doctorLastname,$doctorPhonenumber,$hospital,$room_id, $hospital_id,
-            $hospital_name,$hospital_location,$hospital_phonenumber);
+            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+            $firstName,$lastName,$result,$createDate,
+            $doctorFirstname,$doctorLastname,$doctorPhonenumber,
+            $hospital,$room_id, $hospital_id,
+            $hospital_name,$hospital_location,
+            $hospital_phonenumber);
             // echo $bedDetail_id." ".$patient_id;
         }
         require("connection_close.php");
@@ -132,9 +150,12 @@ class bedDetail
             $hospital_location = $listbed->hospital_location;
             $hospital_phonenumber = $listbed->hospital_phonenumber;
 
-            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$firstName,$lastName,$result,$createDate, $bed_id,$doctor_id,
-            $doctorFirstname,$doctorLastname,$doctorPhonenumber,$hospital,$room_id, $hospital_id,
-            $hospital_name,$hospital_location,$hospital_phonenumber);
+            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+            $firstName,$lastName,$result,$createDate,
+            $doctorFirstname,$doctorLastname,$doctorPhonenumber,
+            $hospital,$room_id, $hospital_id,
+            $hospital_name,$hospital_location,
+            $hospital_phonenumber);
             // echo $bedDetail_id." ".$patient_id;
         }
         require("connection_close.php");
@@ -185,9 +206,12 @@ class bedDetail
         $hospital_phonenumber = $listbed->hospital_phonenumber;
 
         require("connection_close.php");
-        return new bedDetail($bedDetail_id, $patient_id,$firstName,$lastName,$result,$createDate, $bed_id,$doctor_id,
-        $doctorFirstname,$doctorLastname,$doctorPhonenumber,$hospital,$room_id, $hospital_id,
-        $hospital_name,$hospital_location,$hospital_phonenumber);
+        return new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+        $firstName,$lastName,$result,$createDate,
+        $doctorFirstname,$doctorLastname,$doctorPhonenumber,
+        $hospital,$room_id, $hospital_id,
+        $hospital_name,$hospital_location,
+        $hospital_phonenumber);
     }
 
     public static function update($bedDetail_id, $patient_id,$bed_id, $doctor_id)
