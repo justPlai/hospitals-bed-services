@@ -20,7 +20,7 @@ class patientModel
 
     public static function getAll()
     {
-        $doctorList = null;
+        $doctorList = [];
         $itemList = doctor_api::getAll();
         foreach ($itemList as $item) {
             $_id = $item['_id'];
@@ -38,14 +38,21 @@ class patientModel
 
     public static function get($id)
     {
-        $item = doctor_api::getById($id);
+        $item = patient_api::getById($id);
         $_id = $item['_id'];
         $firstName = $item['firstName'];
         $lastName = $item['lastName'];
+        // echo "------";
+        // echo $firstName;
+        // echo "------";
+        // echo $lastName;
+        // echo "------";
         $BOD = $item['BOD'];
         $IDCard = $item['IDCard'];
         $createDate = $item['createDate'];
-
+        // echo $IDCard;
+        // echo "------";
+        // echo $createDate;
         return new patientModel($_id, $firstName, $lastName, $BOD, $IDCard, $createDate);
     }
 }

@@ -3,36 +3,31 @@
         font-family: 'Sarabun', sans-serif;
         overflow: hidden;
     }
-    #searchHospital{
-        position:relative;
-        right:40px; 
-        font-size:large;
+
+    #searchHospital {
+        position: relative;
+        right: 40px;
+        font-size: large;
 
     }
 </style>
 
 <body>
     <div class="container mt-5">
-
-        <form method="get" action="">
-            <div class="row">
-                <div class="col-1">
-                    <i class="bi bi-hospital-fill" style='font-size:50px; top: 15px; position:relative;'></i>
-                </div>
-                <div class="col mt-4">
-                    <input id="searchHospital" type="text" name="key" value="" placeholder="ชื่อโรงพยาบาล" class="form-control" >
-                    <input type="hidden" name="controller" value="hospital">
-                    <input type="hidden" name="action" value="index">
-                </div>
-                <div class="col-3 mt-4">
-                    <button type="submit" class="btn" name="action" value="search" style="position:relative; right:185%; top:10px">
-                        <i class="bi bi-search"></i>
-                    </button>
-                </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-1">
+                <i class="bi bi-hospital-fill" style='font-size:50px; top: 15px; position:relative;'></i>
             </div>
-        </form>
+            <div class="col mt-4">
+                <input type="text" id="searchHospital" onkeyup="myFunction()" value="นา" placeholder="ชื่อโรงพยาบาล">
 
-        <table class="table table-hover">
+                <input type="hidden" name="controller" value="hospital">
+                <input type="hidden" name="action" value="index">
+            </div>
+        </div>
+
+
+        <table class="table table-hover" id="myTable">
             <thead class="table-dark text-center">
                 <tr>
                     <th>ชื่อโรงพยาบาลสนาม</th>
@@ -45,9 +40,9 @@
                 <!--รอ service ครบค่อยใส่ foreach-->
             </thead>
             <tbody class="text-center">
-                <?php 
-                    foreach($hospitalList as $hospital){
-                        echo "<tr>
+                <?php
+                foreach ($hospitalList as $hospital) {
+                    echo "<tr>
                         <td>$hospital->hospital_name</td>
                         <td>$hospital->hospital_location</td>
                         <td>$hospital->hospital_phonenumber</td>
@@ -55,9 +50,8 @@
                         <td><a type=button href=?controller=bedDetail&action=index&id=$hospital->hospital_id >📝</a></td>
                         <td><a type=button href=?controller=hospital&action=updateForm&id=$hospital->hospital_id  >📝</a></td>
                         </tr>";
-                    }
-                
-                
+                }
+
                 ?>
             </tbody>
         </table>
@@ -66,3 +60,38 @@
 </body>
 
 </html>
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("searchHospital");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            td2 = tr[i].getElementsByTagName("td")[1];
+            let x = 1;
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    x = 0;
+                }
+            }
+
+            if (x === 1) {
+                if (td2) {
+                    txtValue = td2.textContent || td2.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+    }
+</script>

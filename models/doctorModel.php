@@ -15,7 +15,7 @@ class doctorModel{
     }
 
     public static function getAll(){
-        $doctorList = null;
+        $doctorList = [];
         $itemList = doctor_api::getAll();
         foreach($itemList as $item){
             $doctorId = $item['doctorId'];

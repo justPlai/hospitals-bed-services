@@ -2,7 +2,8 @@
 $controllers = array(
     'pages' => ['home', 'error'],
     'admin' => ['index', 'login'],
-    'hospital' => ['index', 'updatePage']
+    'hospital' => ['index', 'search', 'updatePage'],
+    'bedDetail' => ['index']
 );
 function call($controller, $action)
 {
@@ -23,6 +24,15 @@ function call($controller, $action)
             require_once("models/hospitalModel.php");
             $controller = new HospitalController();
             break;
+        case "bedDetail":
+            require_once("models/hospitalModel.php");
+            require_once("api/hospital_api.php");
+            require_once("api/patient_api.php");
+            require_once("api/doctor_api.php");
+            require_once("api/rtpcr_api.php");
+            require_once("models/patientModel.php");
+            require_once("models/bedDetailModel.php");
+            $controller = new BedDetailController();
     }
     $controller->{$action}();
 }

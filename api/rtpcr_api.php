@@ -29,7 +29,7 @@ class rtpcr_api
         curl_close($ch);
         $obj = json_decode($output, true);
         //echo $output;
-        return $obj['body'][0];
+        return $obj['body'];
     }
 
     // public static function create($patientID, $officerID, $labID, $result, $detail, $createDate)

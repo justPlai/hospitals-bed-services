@@ -2,16 +2,16 @@
 class rtpcrModel
 {
     public $_id;
-    public $patient;
+    public $patientID;
     public $officerID;
     public $result;
     public $detail;
     public $createDate;
 
-    public function __construct($_id, $patient, $officerID, $result, $detail, $createDate)
+    public function __construct($_id, $patientID, $officerID, $result, $detail, $createDate)
     {
         $this->_id = $_id;
-        $this->patient = $patient;
+        $this->patientID = $patientID;
         $this->officerID = $officerID;
         $this->result = $result;
         $this->detail = $detail;
@@ -20,17 +20,18 @@ class rtpcrModel
 
     public static function getAll()
     {
-        $rtpcrList = null;
+        $rtpcrList = [];
         $itemList = rtpcr_api::getAll();
         foreach ($itemList as $item) {
             $_id = $item['_id'];
             $patientID = $item['patientID'];
-            $patient = patient_api::getById($patientID);
             $officerID = $item['officerID'];
             $result = $item['result'];
             $detail = $item['detail'];
             $createDate = $item['createDate'];
-            $rtpcrList = new rtpcrModel($_id, $patient, $officerID, $result, $detail, $createDate);
+            echo "patient Id";
+            echo $patientID;
+            $rtpcrList = new rtpcrModel($_id, $patientID, $officerID, $result, $detail, $createDate);
         }
 
         return $rtpcrList;
@@ -38,15 +39,14 @@ class rtpcrModel
 
     public static function get($id)
     {
-        $item = doctor_api::getById($id);
+        $item = rtpcr_api::getById($id);
         $_id = $item['_id'];
         $patientID = $item['patientID'];
-        $patient = patient_api::getById($patientID);
         $officerID = $item['officerID'];
         $result = $item['result'];
         $detail = $item['detail'];
         $createDate = $item['createDate'];
 
-        return new rtpcrModel($_id, $patient, $officerID, $result, $detail, $createDate);
+        return new rtpcrModel($_id, $patientID, $officerID, $result, $detail, $createDate);
     }
 }

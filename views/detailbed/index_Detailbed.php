@@ -32,18 +32,24 @@
                     <th>ชื่อ-สกุล ผู้ป่วย</th>
                     <th>วันที่เข้ารับการรักษา</th>
                     <th>ผลการตรวจ</th>
+                    <th>ชื่อ-สกุล หมอ</th>
                     <th>แก้ไข</th>
                 </tr>
                 <!--รอ service ครบค่อยใส่ foreach-->
             </thead>
             <tbody class="text-center">
-                <tr>
-                    <td>100000</td>
-                    <td>กลมชนมก ศรีหาย</td>
-                    <td>9 ต.ค. 2543</td>
-                    <td>พบว่าสมองหายไป</td>
-                    <td><a class="btn btn-primary" href="http://localhost/hospitals-bed-services/views/detailbed/updateDetailbed.php">✍️</a></td>
-                </tr>
+                <?php 
+                    foreach($bedDetailList as $bedDetail){
+                        echo "<tr>
+                            <td>$bedDetail->bedDetail_id</td>
+                            <td>$bedDetail->firstName $bedDetail->lastName</td>
+                            <td>data</td>
+                            <td>result</td>
+                            <td>$bedDetail->doctorFirstname $bedDetail->doctorLastname</td>
+                            <td><a class=btn btn-primary href=>✍️</a></td>
+                        </tr>";
+                    }
+                ?>
             </tbody>
         </table>
 
