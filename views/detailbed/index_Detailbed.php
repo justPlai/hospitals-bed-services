@@ -63,7 +63,7 @@
 <script>
     function myFunction() {
         var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("searchHospital");
+        input = document.getElementById("searchDetail");
         filter = input.value.toUpperCase();
         table = document.getElementById("myTable");
         tr = table.getElementsByTagName("tr");
