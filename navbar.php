@@ -47,8 +47,6 @@
         font-family: sans-serif;
     }
 
-
-    
 </style>
 
 <div id="navbar-main">
