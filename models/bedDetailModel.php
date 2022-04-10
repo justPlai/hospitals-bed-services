@@ -252,11 +252,13 @@ class bedDetail
 
     public static function countByhospital_id($hospital_id){
         require("connection_connect.php");
-        $sql = "SELECT COUNT(bed_id) FROM bed WHERE hospital_id = '$hospital_id'";
+        $sql = "SELECT COUNT(bed.bed_id) as c FROM bedDetail INNER JOIN bed ON (bed.bed_id = bedDetail.bed_id) WHERE bed.hospital_id = '$hospital_id'";
         $result = $conn->query($sql);
+        $my_row = $result->fetch_assoc();
+        $count = $my_row["c"];
         require("connection_close.php");
 
-        return $result;
+        return $count;
     }
 
     public static function countList(){
