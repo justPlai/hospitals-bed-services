@@ -57,7 +57,7 @@
         <div>
 
             <div style="position: relative; right:320px; margin-top:3%">
-                <h2><i class="fa fa-wrench" style="font-size:50px;" aria-hidden="true"></i>แก้ไขข้อมูลเตียง</h2>
+                <h2><i class="fa fa-wrench" style="font-size:50px;" aria-hidden="true"></i>เพิ่มข้อมูลเตียง</h2>
             </div>
 
             <div class="block-1">
