@@ -26,7 +26,12 @@
                 <input type="hidden" name="action" value="index">
             </div>
             <div class="col">
-                <a class="btn btn-primary" href="?controller=hospital&action=createPage" style='left: 60%; position:relative;'>เพิ่มโรงพยาบาล</a><br>
+            <?php
+                    if($_SESSION['token'] == 1)
+                    {
+                        echo '<a class="btn btn-primary" href=?controller=hospital&action=createPage style="left: 60%;position:relative;">เพิ่มโรงพยาบาล</a><br>';
+                    }
+            ?>
             </div>
         </div>
 
@@ -39,7 +44,12 @@
                     <th>เบอร์โทรติดต่อ</th>
                     <th>เตียงคงเหลือ</th>
                     <th>รายละเอียด</th>
-                    <th>แก้ไข</th>
+                    <?php
+                    if($_SESSION['token'] == 1)
+                    {
+                        echo "<th>แก้ไข</th>";
+                    }
+                    ?>
                 </tr>
                 <!--รอ service ครบค่อยใส่ foreach-->
             </thead>
@@ -53,9 +63,12 @@
                         <td>$hospital->hospital_location</td>
                         <td>$hospital->hospital_phonenumber</td>
                         <td>";?> <?php echo $countBed[$count]-$countBedDetail[$count]; ?> <?php echo "</td>
-                        <td><a type=button href=?controller=bedDetail&action=index&hospital_id=$hospital->hospital_id >📝</a></td>
-                        <td><a type=button href=?controller=hospital&action=updatePage&id=$hospital->hospital_id  >📝</a></td>
-                        </tr>";
+                        <td><a type=button href=?controller=bedDetail&action=index&hospital_id=$hospital->hospital_id >📝</a></td>";
+                        if($_SESSION['token'] == 1)
+                        {
+                            echo "<td><a type=button href=?controller=hospital&action=updatePage&id=$hospital->hospital_id  >📝</a></td>";
+                        }
+                        echo "</tr>";
                     $count = $count+1;
                 }
 

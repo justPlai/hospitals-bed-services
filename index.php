@@ -39,6 +39,7 @@ if (isset($_GET['controller']) && isset($_GET['action'])) {
     $action = 'home';
 }
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -71,9 +72,10 @@ session_start();
 
 </head>
 <?php
-if ($controller != "account" || $_GET['action'] != "index") {
+if ($controller != "account" && $_GET['action'] != "login") {
     require_once("navbar.php");
-} ?>
+} 
+?>
 <?php
 require_once("routes.php");
 ?>
