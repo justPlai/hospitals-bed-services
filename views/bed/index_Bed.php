@@ -28,24 +28,20 @@
         <table class="table table-hover mt-3">
             <thead class="table-dark text-center">
                 <tr>
-                    <th>หมายเลขเตียง</th>
-                    <th>ชื่อ-สกุล ผู้ป่วย</th>
-                    <th>วันที่เข้ารับการรักษา</th>
-                    <th>ผลการตรวจ</th>
-                    <th>ชื่อ-สกุล หมอ</th>
+                    <th>ลำดับที่</th>
+                    <th>โรงพยาบาล</th>
+                    <th>ห้อง</th>
                     <th>แก้ไข</th>
                 </tr>
                 <!--รอ service ครบค่อยใส่ foreach-->
             </thead>
             <tbody class="text-center">
                 <?php 
-                    foreach($bedDetailList as $bedDetail){
+                    foreach($bedList as $bedList){
                         echo "<tr>
-                            <td>$bedDetail->bedDetail_id</td>
-                            <td>$bedDetail->firstName $bedDetail->lastName</td>
-                            <td>data</td>
-                            <td>$bedDetail->result</td>
-                            <td>$bedDetail->doctorFirstname $bedDetail->doctorLastname</td>
+                            <td>$bedList->bed_id</td>
+                            <td>$bedList->hospital_name</td>
+                            <td>$bedList->room_id</td>
                             <td><a class=btn btn-primary href=>✍️</a></td>
                         </tr>";
                     }
