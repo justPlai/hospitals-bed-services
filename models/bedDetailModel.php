@@ -15,7 +15,7 @@ class bedDetail
     public $hospital_location;
     public $hospital_phonenumber;
 
-    public function __construct($bedDetail_id, $patient_id, $bed_id,$doctor_id,
+    public function __construct($bedDetail_id, $patient_id,$firstName,$lastName,$result,$createDate, $bed_id,$doctor_id,
     $doctorFirstname,$doctorLastname,$doctorPhonenumber,$hospital,$room_id, $hospital_id,
     $hospital_name,$hospital_location,$hospital_phonenumber)
     {
@@ -49,6 +49,21 @@ class bedDetail
             $bed_id = $my_row["bed_id"];
             $doctor_id = $my_row["doctor_id"];
 
+            //patient
+            $listpatient = patientModel::get($patient_id);
+            $firstName=$listpatient->firstName;
+            $lastName=$listpatient->lastName;
+
+            //rtpcr
+            $listRTPCR = rtpcrModel::getAll();
+            foreach($listRTPCR as $item)
+            {
+                if($item->patientID===$patient_id)
+                {
+                    $result=$item->result;
+                    $createDate=$item->createDate;              
+                }
+            }
             //doctor
             $listdoctor = doctorModel::get($doctor_id);
             $doctorFirstname = $listdoctor->doctorFirstname;
@@ -64,7 +79,7 @@ class bedDetail
             $hospital_location = $listbed->hospital_location;
             $hospital_phonenumber = $listbed->hospital_phonenumber;
 
-            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id, $bed_id,$doctor_id,
+            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$firstName,$lastName,$result,$createDate, $bed_id,$doctor_id,
             $doctorFirstname,$doctorLastname,$doctorPhonenumber,$hospital,$room_id, $hospital_id,
             $hospital_name,$hospital_location,$hospital_phonenumber);
             // echo $bedDetail_id." ".$patient_id;
@@ -86,6 +101,22 @@ class bedDetail
             $bed_id = $my_row["bed_id"];
             $doctor_id = $my_row["doctor_id"];
 
+            //patient
+            $listpatient = patientModel::get($patient_id);
+            $firstName=$listpatient->firstName;
+            $lastName=$listpatient->lastName;
+
+            //rtpcr
+            $listRTPCR = rtpcrModel::getAll();
+            foreach($listRTPCR as $item)
+            {
+                if($item->patientID===$patient_id)
+                {
+                    $result=$item->result;
+                    $createDate=$item->createDate;              
+                }
+            }
+        
             //doctor
             $listdoctor = doctorModel::get($doctor_id);
             $doctorFirstname = $listdoctor->doctorFirstname;
@@ -101,7 +132,7 @@ class bedDetail
             $hospital_location = $listbed->hospital_location;
             $hospital_phonenumber = $listbed->hospital_phonenumber;
 
-            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id, $bed_id,$doctor_id,
+            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$firstName,$lastName,$result,$createDate, $bed_id,$doctor_id,
             $doctorFirstname,$doctorLastname,$doctorPhonenumber,$hospital,$room_id, $hospital_id,
             $hospital_name,$hospital_location,$hospital_phonenumber);
             // echo $bedDetail_id." ".$patient_id;
@@ -122,6 +153,22 @@ class bedDetail
         $bed_id = $my_row["bed_id"];
         $doctor_id = $my_row["doctor_id"];
 
+        //patient
+        $listpatient = patientModel::get($patient_id);
+        $firstName=$listpatient->firstName;
+        $lastName=$listpatient->lastName;
+
+        //rtpcr
+        $listRTPCR = rtpcrModel::getAll();
+        foreach($listRTPCR as $item)
+        {
+            if($item->patientID===$patient_id)
+            {
+                $result=$item->result;
+                $createDate=$item->createDate;              
+            }
+        }
+        
         //doctor
         $listdoctor = doctorModel::get($doctor_id);
         $doctorFirstname = $listdoctor->doctorFirstname;
@@ -138,7 +185,7 @@ class bedDetail
         $hospital_phonenumber = $listbed->hospital_phonenumber;
 
         require("connection_close.php");
-        return new bedDetail($bedDetail_id, $patient_id, $bed_id,$doctor_id,
+        return new bedDetail($bedDetail_id, $patient_id,$firstName,$lastName,$result,$createDate, $bed_id,$doctor_id,
         $doctorFirstname,$doctorLastname,$doctorPhonenumber,$hospital,$room_id, $hospital_id,
         $hospital_name,$hospital_location,$hospital_phonenumber);
     }
