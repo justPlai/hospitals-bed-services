@@ -41,6 +41,22 @@ class hospital
         return new hospital($hospital_id, $hospital_name, $hospital_location, $hospital_phonenumber);
     }
 
+    public static function getByName($key)
+    {
+        $hospitalList = [];
+        $result = hospital_api::getAll();
+        foreach ($result as $item) {
+            if($key===$item["hospitalName"])
+            {
+                $hospital_id = $item["hospitalId"];
+                $hospital_name = $item["hospitalName"];
+                $hospital_location = $item["hospitalLocation"];
+                $hospital_phonenumber = $item["hospitalPhonenumber"];
+                $hospitalList[] = new hospital($hospital_id, $hospital_name, $hospital_location, $hospital_phonenumber);
+            }
+        }
+        return $hospitalList;
+    }
     public static function update($hospital_id, $hospital_name, $hospital_location, $hospital_phonenumber)
     {
         $result = hospital_api::update($hospital_id, $hospital_name, $hospital_location, $hospital_phonenumber);
