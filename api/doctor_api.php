@@ -50,7 +50,7 @@ class doctor_api
 
     public static function update($doctor_id, $doctor_firstname, $doctor_lastname, $doctor_phonenumber, $hospital_id)
     {
-        $url = "http://158.108.207.7:8080/hospitals/rest/services/hospitals";
+        $url = "http://158.108.207.7:8080/hospitals/rest/services/doctors";
         $data = array('doctorId' => $doctor_id, 'doctorFirstname' => $doctor_firstname, 'doctorLastname' => $doctor_lastname, 'doctorPhonenumber' => $doctor_phonenumber, 'hospital' => array('hospitalId'=> $hospital_id));
         $data_json = json_encode($data);
         $ch = curl_init();
@@ -62,5 +62,17 @@ class doctor_api
         $response  = curl_exec($ch);
         curl_close($ch);
         // echo $response;
+    }
+    public static function delete($doctor_id)
+    {
+        $url="http://158.108.207.7:8080/hospitals/rest/services/doctors/$doctor_id";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        //curl_setopt($ch, CURLOPT_POSTFIELDS,$data_json);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response  = curl_exec($ch);
+        curl_close($ch);
+        
     }
 }
