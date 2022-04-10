@@ -74,14 +74,9 @@
                                 <input name=hospital_id type=hidden value=" . $bedDetail->hospital_id . " />
                                 <a type=button class=show_confirm data-toggle=tooltip test=" . $bedDetail->bedDetail_id . ">🚮</a>
                             </form>
-                            </td>
-                            
-                            
+                            </td>    
                             ";
                         }
-
-
-
                         ?>
 
                     <?php echo "
