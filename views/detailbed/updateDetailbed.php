@@ -105,7 +105,7 @@
                                         if ($doctor->hostpitalId == $bedDetail->hospital_id) {
 
                                             echo "<option value = $doctor->doctorId";
-                                            if ($bed->doctorId == $bedDetail->doctor_id) {
+                                            if ($doctor->doctorId == $bedDetail->doctor_id) {
                                                 echo " selected='selected'";
                                             }
                                             echo ">$doctor->doctorFirstname $doctor->doctorLastname</option>";
