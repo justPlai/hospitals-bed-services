@@ -58,6 +58,7 @@ class hospital
     }
     public static function update($hospital_id, $hospital_name, $hospital_location, $hospital_phonenumber)
     {
+        
         $result = hospital_api::update($hospital_id, $hospital_name, $hospital_location, $hospital_phonenumber);
         return "update success $result row";
     }
