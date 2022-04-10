@@ -5,6 +5,7 @@ class bedDetail
     public $patient_id;
     public $bed_id;
     public $doctor_id;
+    public $date;
 
     public $firstName;
     public $lastName;
@@ -22,7 +23,7 @@ class bedDetail
     public $hospital_location;
     public $hospital_phonenumber;
 
-    public function __construct($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+    public function __construct($bedDetail_id, $patient_id,$bed_id,$doctor_id,$date,
     $firstName,$lastName,$result,$createDate,
     $doctorFirstname,$doctorLastname,$doctorPhonenumber,
     $hospital,$room_id, $hospital_id,
@@ -33,6 +34,7 @@ class bedDetail
         $this->patient_id = $patient_id;
         $this->bed_id = $bed_id;
         $this->doctor_id = $doctor_id;
+        $this->date = $date;
 
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -63,7 +65,7 @@ class bedDetail
             $patient_id = $my_row["patient_id"];
             $bed_id = $my_row["bed_id"];
             $doctor_id = $my_row["doctor_id"];
-
+            $date = $my_row["date"];
             //patient
             $listpatient = patientModel::get($patient_id);
             $firstName=$listpatient->firstName;
@@ -94,7 +96,7 @@ class bedDetail
             $hospital_location = $listbed->hospital_location;
             $hospital_phonenumber = $listbed->hospital_phonenumber;
 
-            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,$date,
             $firstName,$lastName,$result,$createDate,
             $doctorFirstname,$doctorLastname,$doctorPhonenumber,
             $hospital,$room_id, $hospital_id,
@@ -118,7 +120,7 @@ class bedDetail
             $patient_id = $my_row["patient_id"];
             $bed_id = $my_row["bed_id"];
             $doctor_id = $my_row["doctor_id"];
-
+            $date = $my_row["date"];
             //patient
             $listpatient = patientModel::get($patient_id);
             $firstName=$listpatient->firstName;
@@ -150,7 +152,7 @@ class bedDetail
             $hospital_location = $listbed->hospital_location;
             $hospital_phonenumber = $listbed->hospital_phonenumber;
 
-            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,$date,
             $firstName,$lastName,$result,$createDate,
             $doctorFirstname,$doctorLastname,$doctorPhonenumber,
             $hospital,$room_id, $hospital_id,
@@ -173,7 +175,7 @@ class bedDetail
         $patient_id = $my_row["patient_id"];
         $bed_id = $my_row["bed_id"];
         $doctor_id = $my_row["doctor_id"];
-
+        $date = $my_row["date"];
         //patient
         $listpatient = patientModel::get($patient_id);
         $firstName=$listpatient->firstName;
@@ -206,7 +208,7 @@ class bedDetail
         $hospital_phonenumber = $listbed->hospital_phonenumber;
 
         require("connection_close.php");
-        return new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+        return new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,$date,
         $firstName,$lastName,$result,$createDate,
         $doctorFirstname,$doctorLastname,$doctorPhonenumber,
         $hospital,$room_id, $hospital_id,
@@ -214,10 +216,10 @@ class bedDetail
         $hospital_phonenumber);
     }
 
-    public static function update($bedDetail_id, $patient_id,$bed_id, $doctor_id)
+    public static function update($bedDetail_id, $patient_id,$bed_id, $doctor_id,$date)
     {
         require("connection_connect.php");
-        $sql = "UPDATE bedDetail SET patient_id = '$patient_id', bed_id = '$bed_id', doctor_id = '$doctor_id' WHERE bedDetail_id = '$bedDetail_id'";
+        $sql = "UPDATE bedDetail SET patient_id = '$patient_id', bed_id = '$bed_id', doctor_id = '$doctor_id', date = '$date' WHERE bedDetail_id = '$bedDetail_id'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
@@ -226,7 +228,7 @@ class bedDetail
     public static function add($patient_id,$bed_id,$doctor_id)
     {
         require("connection_connect.php");
-        $sql = "INSERT INTO `bedDetail` (`patient_id`, `bed_id`, `doctor_id`) VALUES ('$patient_id', '$bed_id', '$doctor_id');";
+        $sql = "INSERT INTO `bedDetail` (`patient_id`, `bed_id`, `doctor_id`, `date`) VALUES ('$patient_id', '$bed_id', '$doctor_id','$date');";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "Add success $result row";
