@@ -10,6 +10,7 @@ function call($controller, $action)
         case "pages":
             require_once("models/hospitalModel.php");
             require_once("api/hospital_api.php");
+            require_once("models/bedModel.php");
             $controller = new PagesController();
             break;
         case "hospital":
