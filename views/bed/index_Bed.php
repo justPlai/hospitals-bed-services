@@ -33,7 +33,7 @@
                     <th>โรงพยาบาล</th>
                     <th>ห้อง</th>
                     <th>แก้ไข</th>
-                    <th>ถังขยะ</th>
+                    <th>ลบ</th>
                 </tr>
                 <!--รอ service ครบค่อยใส่ foreach-->
             </thead>

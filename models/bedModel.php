@@ -96,8 +96,12 @@ class bed
     public static function delete($bed_id)
     {
         require("connection_connect.php");
-        $sql = "DELETE FROM bed WHERE bed_id = '$bed_id'";
+        $sql = "DELETE FROM bedDetail WHERE bedDetail.bed_id = '$bed_id'";
         $result = $conn->query($sql);
+
+        $sql2 = "DELETE FROM bed WHERE bed_id = '$bed_id'";
+        $result = $conn->query($sql2);
+
         require("connection_close.php");
         return "Delete success $result row";
     }
