@@ -53,27 +53,33 @@
                     <div style="position: relative;top:50px">
                         <div class="row">
                             <div class="col">
-                                <label style="position: relative;right:340px;font-size: 20px">หมายเลขเตียง</label>
-                                <input type="text" class="form-control " name="hospitalName" value="" /><br>
+                                <label style="position: relative;right:340px;font-size: 20px">ลำดับที่</label>
+                                <input type="text" class="form-control " name="hospitalName" value="<?php echo $bedList->bed_id;?>" /><br>
                                 <div>
                                     <div>
 
                                         <div class="row" style="position: relative;top: 20px;">
                                             <div class="col">
-                                                <label style="position: relative;right:330px;font-size: 20px;">ชื่อ - สกุล ผู้ป่วย</label>
-                                                <input type="text" class="form-control" name="hospitalLocation" value="" /><br>
+                                                <label style="position: relative;right:330px;font-size: 20px;">หมายเลขห้อง</label>
+                                                <input type="text" class="form-control" name="hospitalLocation" value="<?php echo $bedList->room_id;?>" /><br>
                                                 <div>
                                                     <div>
                                                         <div class="row" style="position: relative;top: 20px;">
                                                             <div class="col">
-                                                                <label style="position: relative;right:320px;font-size: 20px;">วันที่เข้ารับการรักษา</label>
-                                                                <input type="date" class="form-control" name="hospitalPhonenumber" value="" /><br>
+                                                                <label style="position: relative;right:320px;font-size: 20px;">ชื่อโรงพยาบาล</label>
+                                                              <div class="col">
+                                                                    <select name="A_ID">
+                                                                <?php foreach($hospitalList as $hospitalList) {
+                                                                    echo "<option value = $hospitalList->hospital_id";
+                                                                    if($hospitalList->hospital_id==$bedList->hospital_id){echo " selected='selected'";}
+                                                                    echo ">$hospitalList->hospital_name</option>";}?></select><br>
+                                                                  <div>
                                                                 <div>
                                                                     <div>
 
 
-                                                                        <input type="hidden" name="controller" value="" />
-                                                                        <input type="hidden" name="oldid" value="" />
+                                                                        <input type="hidden" name="controller" value="bed" />
+                                                                        <input type="hidden" name="oldid" value="<?php echo $bedList->bed_id;?>" />
                                                                         <!--ใส่ id-->
                                                                         <div class="row" style="position: relative;top: 20px;">
                                                                             <div class="col">
