@@ -30,7 +30,6 @@ class hospital
 
     public static function getById($id)
     {
-
         $result = hospital_api::getById($id);
         $item = $result;
         $hospital_id = $item["hospitalId"];

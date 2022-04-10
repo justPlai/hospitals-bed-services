@@ -4,14 +4,14 @@ class doctorModel{
     public $doctorFirstname;
     public $doctorLastname;
     public $doctorPhonenumber;
-    public $hospital;
+    public $hostpitalId;
 
-    public function __construct($doctorId, $doctorFirstname, $doctorLastname, $doctorPhonenumber, $hospital){
+    public function __construct($doctorId, $doctorFirstname, $doctorLastname, $doctorPhonenumber, $hostpitalId){
         $this->doctorId = $doctorId;
         $this->doctorFirstname = $doctorFirstname;
         $this->doctorLastname = $doctorLastname;
         $this->doctorPhonenumber = $doctorPhonenumber;
-        $this->hostpital = $hospital;
+        $this->hostpitalId = $hostpitalId;
     }
 
     public static function getAll(){
@@ -24,7 +24,7 @@ class doctorModel{
             $doctorPhonenumber = $item['doctorPhonenumber'];
             $hostpitalId = $item['hospital']['hospitalId'];
             $hospital = hospital_api::getById($hostpitalId);
-            $doctorList = new doctorModel($doctorId, $doctorFirstname, $doctorLastname, $doctorPhonenumber, $hospital);
+            $doctorList = new doctorModel($doctorId, $doctorFirstname, $doctorLastname, $doctorPhonenumber, $hostpitalId);
         }
 
         return $doctorList;
@@ -38,7 +38,7 @@ class doctorModel{
         $doctorPhonenumber = $item['doctorPhonenumber'];
         $hostpitalId = $item['hospital']['hospitalId'];
         $hospital = hospital_api::getById($hostpitalId);
-        return new doctorModel($doctorId, $doctorFirstname, $doctorLastname, $doctorPhonenumber, $hospital);
+        return new doctorModel($doctorId, $doctorFirstname, $doctorLastname, $doctorPhonenumber, $hostpitalId);
     }
 
     public static function create($doctor_firstname, $doctor_lastname, $doctor_phonenumber, $hospital_id){

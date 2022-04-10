@@ -29,11 +29,8 @@ class rtpcrModel
             $result = $item['result'];
             $detail = $item['detail'];
             $createDate = $item['createDate'];
-            echo "patient Id";
-            echo $patientID;
-            $rtpcrList = new rtpcrModel($_id, $patientID, $officerID, $result, $detail, $createDate);
+            $rtpcrList[] = new rtpcrModel($_id, $patientID, $officerID, $result, $detail, $createDate);
         }
-
         return $rtpcrList;
     }
 

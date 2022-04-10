@@ -50,10 +50,11 @@ class bed
         $room_id = $my_row["room_id"];
         $hospital_id = $my_row["hospital_id"];
 
-        $list = hostpital::getById($hospital_id);
+        $list = hospital::getById($hospital_id);
         $hospital_name = $list->hospital_name;
         $hospital_location = $list->hospital_location;
         $hospital_phonenumber = $list->hospital_phonenumber;
+
         require("connection_close.php");
         return new bed($bed_id, $room_id, $hospital_id,$hospital_name,$hospital_location,$hospital_phonenumber);
     }

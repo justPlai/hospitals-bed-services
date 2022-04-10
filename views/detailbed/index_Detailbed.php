@@ -44,7 +44,7 @@
                             <td>$bedDetail->bedDetail_id</td>
                             <td>$bedDetail->firstName $bedDetail->lastName</td>
                             <td>data</td>
-                            <td>result</td>
+                            <td>$bedDetail->result</td>
                             <td>$bedDetail->doctorFirstname $bedDetail->doctorLastname</td>
                             <td><a class=btn btn-primary href=>✍️</a></td>
                         </tr>";

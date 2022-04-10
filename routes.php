@@ -32,6 +32,9 @@ function call($controller, $action)
             require_once("api/rtpcr_api.php");
             require_once("models/patientModel.php");
             require_once("models/bedDetailModel.php");
+            require_once("models/rtpcrModel.php");
+            require_once("models/doctorModel.php");
+            require_once("models/bedModel.php");
             $controller = new BedDetailController();
     }
     $controller->{$action}();

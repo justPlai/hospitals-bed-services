@@ -29,7 +29,7 @@ class doctor_api
         curl_close($ch);
         $obj = json_decode($output, true);
         //echo $output;
-        return $obj['result'][0];
+        return $obj['result'];
     }
 
     public static function create($doctor_firstname, $doctor_lastname, $doctor_phonenumber, $hospital_id)
