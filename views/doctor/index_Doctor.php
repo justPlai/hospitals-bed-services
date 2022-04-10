@@ -4,7 +4,7 @@
         overflow: hidden;
     }
 
-    #searchbed {
+    #searchdoctor {
         position: relative;
         right: 40px;
         width: 500px;
@@ -21,22 +21,22 @@
                 <i class="bi bi-hospital-fill" style='font-size:50px; top: 15px; position:relative;'></i>
             </div>
             <div class="col mt-4">
-                <input type="text" id="searchbed" onkeyup="myFunction()" placeholder="ค้นหา...">
+                <input type="text" id="searchdoctor" onkeyup="myFunction()" placeholder="ค้นหา...">
 
                 <input type="hidden" name="controller" value="hospital">
                 <input type="hidden" name="action" value="index">
             </div>
             <div class="col mt-4">
-                <a class="btn btn-primary" href="?controller=bed&action=createPage" style='left: 60%; position:relative;'>เพิ่มเตียงโรงพยาบาล</a><br>
+                <a class="btn btn-primary" href="?controller=doctor&action=createPage" style='left: 85%; position:relative;'>เพิ่มหมอ</a><br>
             </div>
         </div>
 
         <table class="table table-hover" id="myTable">
             <thead class="table-dark text-center">
                 <tr>
-                    <th>ลำดับที่</th>
+                    <th>ชื่อหมอ</th>
                     <th>โรงพยาบาล</th>
-                    <th>ห้อง</th>
+                    <th>เบอร์โทรศัพท์</th>
                     <th>แก้ไข</th>
                     <th>ลบ</th>
                 </tr>
@@ -44,17 +44,17 @@
             </thead>
             <tbody class="text-center">
                 <?php
-                foreach ($bedList as $bedList) {
+                foreach ($doctorList as $doctorList) {
                     echo "<tr>
-                            <td>$bedList->bed_id</td>
-                            <td>$bedList->hospital_name</td>
-                            <td>$bedList->room_id</td>
-                            <td><a type=button href=?controller=bed&action=updatePage&id=$bedList->bed_id >📝</a></td>";
+                            <td>$doctorList->doctorFirstname $doctorList->doctorLastname</td>
+                            <td>$doctorList->hospital_name</td>
+                            <td>$doctorList->doctorPhonenumber</td>
+                            <td><a type=button href=?controller=doctor&action=updatePage&id=$doctorList->doctorId >📝</a></td>";
                 ?>
                     <td>
-                        <form method=POST action="?controller=bed&action=delete">
-                            <input name="id" type="hidden" value="<?php echo "$bedList->bed_id"; ?>">
-                            <a type="button" class="show_confirm" data-toggle="tooltip" test="<?php echo $bedList->bed_id; ?>">🚮</a>
+                        <form method=POST action="?controller=doctor&action=delete">
+                            <input name="id" type="hidden" value="<?php echo "$doctorList->doctorId"; ?>">
+                            <a type="button" class="show_confirm" data-toggle="tooltip" test="<?php echo "$doctorList->doctorFirstname"; ?> <?php echo "$doctorList->doctorLastname"; ?>">🚮</a>
                         </form>
                     </td>
                 <?php
@@ -71,13 +71,13 @@
 <script>
     function myFunction() {
         var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("searchbed");
+        input = document.getElementById("searchdoctor");
         filter = input.value.toUpperCase();
         table = document.getElementById("myTable");
         tr = table.getElementsByTagName("tr");
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
-            td2 = tr[i].getElementsByTagName("td")[2];
+            td = tr[i].getElementsByTagName("td")[0];
+            td2 = tr[i].getElementsByTagName("td")[1];
             let x = 1;
             if (td) {
                 txtValue = td.textContent || td.innerText;
@@ -122,7 +122,7 @@
             if (result.isConfirmed) {
                 Swal.fire(
                         'ลบเสร็จสิ้น!',
-                        'เตียงนี้ได้ถูกลบไปแล้ว',
+                        'คุณหมอท่านนี้ได้ถูกลบไปแล้ว',
                         'success'
                     )
                     .then(function() {

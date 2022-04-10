@@ -4,7 +4,8 @@ $controllers = array(
     'account' => ['index', 'login', 'logout'],
     'hospital' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete'],
     'bedDetail' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete'],
-    'bed' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete']
+    'bed' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete'],
+    'doctor' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete']
 );
 function call($controller, $action)
 {
@@ -43,6 +44,14 @@ function call($controller, $action)
             require_once("api/hospital_api.php");
             require_once("models/bedModel.php");
             $controller = new BedController();
+            break;
+        case "doctor":
+            require_once("models/hospitalModel.php");
+            require_once("api/hospital_api.php");
+            require_once("api/doctor_api.php");
+            //require_once("models/doctorModel.php");
+            require_once("models/doctorTwoModel.php");
+            $controller = new DoctorController();
             break;
     }
     $controller->{$action}();
