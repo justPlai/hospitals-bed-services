@@ -66,19 +66,22 @@
                     <div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col" style="position: relative; margin-top:5%">
                                 <label style="margin-right:65%;">หมายเลขห้อง</label>
-                                <input type="text" class="form-control" name="room_id"/><br>
+                                <input type="text" class="form-control" name="room_id" /><br>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
-                                <label style="margin-right:75%;">โรงพยาบาล</label>
+                            <div class="col" style="position: relative; margin-top:5%">
+                                <label style="margin-right:65%;">โรงพยาบาล</label>
                                 <select name="hospital_id">
                                     <?php foreach ($hospitalList as $hospitalList) {
-                                        echo "<option value = $hospitalList->hospital_id>
-                                        $hospitalList->hospital_name</option>";
+                                        echo "<option value = $hospitalList->hospital_id";
+                                        if ($hospitalList->hospital_id == $bedList->hospital_id) {
+                                            echo " selected='selected'";
+                                        }
+                                        echo ">$hospitalList->hospital_name</option>";
                                     } ?></select>
                             </div>
                         </div>
@@ -88,7 +91,7 @@
                         <!--ใส่ id-->
                         <div class="row">
                             <div class="col" style="position: relative; margin-top:10%">
-                                <button class="btn btn-primary" type="submit" name="action" value="create">อัพเดต</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="create">เพิ่ม</button>
                                 <button class="btn btn-primary" type="submit" name="action" value="index">ย้อนกลับ</button>
                             </div>
                         </div>
