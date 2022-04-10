@@ -29,4 +29,16 @@ class HospitalController
         hospital::update($id,$name,$location,$phonenumber);
         HospitalController ::index();
     }
+    public function createPage()
+    {
+        require_once('views/hospital/newHospital.php');
+    }
+    public function create()
+    {
+        $name = $_GET['hospital_name'];
+        $location = $_GET['hospital_location'];
+        $phonenumber = $_GET['hospital_phonenumber'];
+        hospital::add($name,$location,$phonenumber);   
+        HospitalController::index();
+    }
 }
