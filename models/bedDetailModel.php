@@ -73,6 +73,43 @@ class bedDetail
         return $bedDetailList;
     }
 
+    public static function getByHospitalId($hospital_id)
+    {
+        $bedDetailList = [];
+        require("connection_connect.php");
+        $sql = "SELECT * FROM bedDetail INNER JOIN bed ON bedDetail.bed_id = bed.bed_id WHERE hospital_id = '$hospital_id'";
+        $result = $conn->query($sql);
+        while ($my_row = $result->fetch_assoc()) {
+
+            $bedDetail_id = $my_row["bedDetail_id"];
+            $patient_id = $my_row["patient_id"];
+            $bed_id = $my_row["bed_id"];
+            $doctor_id = $my_row["doctor_id"];
+
+            //doctor
+            $listdoctor = doctorModel::get($doctor_id);
+            $doctorFirstname = $listdoctor->doctorFirstname;
+            $doctorLastname = $listdoctor->doctorLastname;
+            $doctorPhonenumber = $listdoctor->doctorPhonenumber;
+            $hospital = $listdoctor->hospital;
+
+            //bed && hospital
+            $listbed = bed::get($bed_id);
+            $room_id = $listbed->room_id;
+            $hospital_id = $listbed->hospital_id;
+            $hospital_name = $listbed->hospital_name;
+            $hospital_location = $listbed->hospital_location;
+            $hospital_phonenumber = $listbed->hospital_phonenumber;
+
+            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id, $bed_id,$doctor_id,
+            $doctorFirstname,$doctorLastname,$doctorPhonenumber,$hospital,$room_id, $hospital_id,
+            $hospital_name,$hospital_location,$hospital_phonenumber);
+            // echo $bedDetail_id." ".$patient_id;
+        }
+        require("connection_close.php");
+        return $bedDetailList;
+    }
+
     public static function get($bedDetail_id)
     {
         require("connection_connect.php");

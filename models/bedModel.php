@@ -22,7 +22,7 @@ class bed
     public static function getAll()
     {
         $bedList = [];
-        require("../../connection_connect.php");
+        require("connection_connect.php");
         $sql = "SELECT * FROM bed";
         $result = $conn->query($sql);
         while ($my_row = $result->fetch_assoc()) {
@@ -36,13 +36,13 @@ class bed
             $bedList[] = new bed($bed_id, $room_id, $hospital_id,$hospital_name,$hospital_location,$hospital_phonenumber);
             // echo $bed_id." ".$room_id;
         }
-        require("../../connection_close.php");
+        require("connection_close.php");
         return $bedList;
     }
 
     public static function get($bed_id)
     {
-        require("../../connection_connect.php");
+        require("connection_connect.php");
         $sql = "SELECT * FROM bed WHERE bed_id = '$bed_id'";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
@@ -54,7 +54,25 @@ class bed
         $hospital_name = $list->hospital_name;
         $hospital_location = $list->hospital_location;
         $hospital_phonenumber = $list->hospital_phonenumber;
-        require("../../connection_close.php");
+        require("connection_close.php");
+        return new bed($bed_id, $room_id, $hospital_id,$hospital_name,$hospital_location,$hospital_phonenumber);
+    }
+
+    public static function getbyroomId($room_id)
+    {
+        require("connection_connect.php");
+        $sql = "SELECT * FROM bed WHERE room_id = '$room_id'";
+        $result = $conn->query($sql);
+        $my_row = $result->fetch_assoc();
+        $bed_id = $my_row["bed_id"];
+        $room_id = $my_row["room_id"];
+        $hospital_id = $my_row["hospital_id"];
+
+        $list = hostpital::getById($hospital_id);
+        $hospital_name = $list->hospital_name;
+        $hospital_location = $list->hospital_location;
+        $hospital_phonenumber = $list->hospital_phonenumber;
+        require("connection_close.php");
         return new bed($bed_id, $room_id, $hospital_id,$hospital_name,$hospital_location,$hospital_phonenumber);
     }
 
