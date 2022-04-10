@@ -10,6 +10,10 @@ class BedDetailController
     public function updatePage()
     {
         $id = $_GET['id'];
+        $patientList = patientModel::getAll();
+        echo $patientList[0]->firstName;
+        $doctorList = doctorModel::getAll();
+        $bedList = bed::getAll();
         $bedDetail = bedDetail::get($id);
         require_once('views/detailbed/updateDetailbed.php');
     }
