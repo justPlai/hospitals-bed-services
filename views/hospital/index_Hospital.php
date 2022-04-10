@@ -7,6 +7,7 @@
     #searchHospital {
         position: relative;
         right: 40px;
+        width: 500px;
         font-size: large;
 
     }
@@ -23,6 +24,9 @@
 
                 <input type="hidden" name="controller" value="hospital">
                 <input type="hidden" name="action" value="index">
+            </div>
+            <div class="col mt-4">
+                <a class="btn btn-primary" href="?controller=hospital&action=createPage" style='left: 60%; position:relative;'>เพิ่มโรงพยาบาล</a><br>
             </div>
         </div>
 
