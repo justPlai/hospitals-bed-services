@@ -5,10 +5,10 @@ class PagesController
     { 
         //hospital::add("ฉัน","คือ","คนไทย");
         //echo $k[0]->room_id;
-        require_once('index.php');
+        require_once('views/main/home.php');
     }
     public function error()
     {
-        require_once('error.php');
+        require_once('views/main/error.php');
     }
 }

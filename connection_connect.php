@@ -18,4 +18,3 @@ if (!$conn->select_db($dbname)) {
     //echo " Successfully connected to database <br>";
 }
 ?>
-</div>

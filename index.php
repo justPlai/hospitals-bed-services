@@ -1,4 +1,6 @@
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
     #search {
         margin-left: 10%;
         margin-top: 20%;
@@ -20,7 +22,8 @@
         border-radius: 20px;
         padding: 10px;
     }
-    #search-button{
+
+    #search-button {
         font-size: 200%;
         margin-left: 10px;
         border-radius: 20px;
@@ -29,11 +32,11 @@
 </style>
 <?php
 if (isset($_GET['controller']) && isset($_GET['action'])) {
-  $controller = $_GET['controller'];
-  $action = $_GET['action'];
+    $controller = $_GET['controller'];
+    $action = $_GET['action'];
 } else {
-  $controller = 'pages';
-  $action = 'home';
+    $controller = 'pages';
+    $action = 'home';
 }
 // session_start();
 ?>
@@ -58,25 +61,20 @@ if (isset($_GET['controller']) && isset($_GET['action'])) {
 
     <script src="https://unpkg.com/feather-icons"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <!-- <script src="sweetalert2.all.min.js"></script> -->
 
 </head>
-<?php require_once("../../routes.php") ?>
 <?php
-require_once("../navbar.php")
+if($_GET['controller'] != "admin" || $_GET['action'] != "index"){
+    require_once("navbar.php");
+}
+
+require_once("routes.php");
 ?>
 
-
-
-<body>
-    <div id="search">
-        <form id="search-form">
-            <input type="text" value="" placeholder="ชื่อโรงพยาบาลสนาม..." />
-            <button type="submit" id="search-button">ค้นหา</button>
-            <!-- <img type="submit" id="magnify" src="../img/magnify.png" /> -->
-        </form>
-    </div>
-</body>
-
-</html>
