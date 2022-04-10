@@ -5,6 +5,7 @@ class bedDetail
     public $patient_id;
     public $bed_id;
     public $doctor_id;
+    public $date;
 
     public $firstName;
     public $lastName;
@@ -22,7 +23,7 @@ class bedDetail
     public $hospital_location;
     public $hospital_phonenumber;
 
-    public function __construct($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+    public function __construct($bedDetail_id, $patient_id,$bed_id,$doctor_id,$date,
     $firstName,$lastName,$result,$createDate,
     $doctorFirstname,$doctorLastname,$doctorPhonenumber,
     $hospital,$room_id, $hospital_id,
@@ -33,6 +34,7 @@ class bedDetail
         $this->patient_id = $patient_id;
         $this->bed_id = $bed_id;
         $this->doctor_id = $doctor_id;
+        $this->date = $date;
 
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -63,6 +65,7 @@ class bedDetail
             $patient_id = $my_row["patient_id"];
             $bed_id = $my_row["bed_id"];
             $doctor_id = $my_row["doctor_id"];
+            $date = $my_row["date"];
 
             //patient
             $listpatient = patientModel::get($patient_id);
@@ -96,7 +99,7 @@ class bedDetail
             $hospital_location = $listbed->hospital_location;
             $hospital_phonenumber = $listbed->hospital_phonenumber;
 
-            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,$date,
             $firstName,$lastName,$result,$createDate,
             $doctorFirstname,$doctorLastname,$doctorPhonenumber,
             $hospital,$room_id, $hospital_id,
@@ -120,6 +123,7 @@ class bedDetail
             $patient_id = $my_row["patient_id"];
             $bed_id = $my_row["bed_id"];
             $doctor_id = $my_row["doctor_id"];
+            $date = $my_row["date"];
             // echo "+++++";
             // echo $patient_id;
             // echo "+++++";
@@ -153,7 +157,8 @@ class bedDetail
             $hospital_name = $listbed->hospital_name;
             $hospital_location = $listbed->hospital_location;
             $hospital_phonenumber = $listbed->hospital_phonenumber;
-            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+
+            $bedDetailList[] = new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,$date,
             $firstName,$lastName,$result,$createDate,
             $doctorFirstname,$doctorLastname,$doctorPhonenumber,
             $hospital,$room_id, $hospital_id,
@@ -176,6 +181,7 @@ class bedDetail
         $patient_id = $my_row["patient_id"];
         $bed_id = $my_row["bed_id"];
         $doctor_id = $my_row["doctor_id"];
+        $date = $my_row["date"];
 
         //patient
         $listpatient = patientModel::get($patient_id);
@@ -209,7 +215,7 @@ class bedDetail
         $hospital_phonenumber = $listbed->hospital_phonenumber;
 
         require("connection_close.php");
-        return new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,
+        return new bedDetail($bedDetail_id, $patient_id,$bed_id,$doctor_id,$date,
         $firstName,$lastName,$result,$createDate,
         $doctorFirstname,$doctorLastname,$doctorPhonenumber,
         $hospital,$room_id, $hospital_id,
