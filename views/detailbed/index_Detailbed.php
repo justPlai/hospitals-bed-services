@@ -24,7 +24,13 @@
                     <input type="text" id="searchDetail" onkeyup="myFunction()" value="" placeholder="ค้นหา">
                 </div>
                 <div class="col mt-4">
-                    <a class="btn btn-primary" href="?controller=bedDetail&action=createPage&hospital_id=<?php echo $hospital_id; ?>" style='margin-top: 10px; left: 60%; position:relative;'>เพิ่มรายละเอียดเตียง</a><br>
+                    <?php
+                    if ($_SESSION['token'] == 1) {
+                        echo '<a class="btn btn-primary"';
+                        echo " href=?controller=bedDetail&action=createPage&hospital_id=" . $hospital_id . " style='margin-top: 10px; left: 60%; position:relative;'";
+                        echo ">เพิ่มรายละเอียดเตียง</a><br>";
+                    }
+                    ?>
                 </div>
             </div>
 
@@ -38,8 +44,13 @@
                         <th>วันที่เข้ารับการรักษา</th>
                         <th>ผลการตรวจ</th>
                         <th>ชื่อ-สกุล หมอ</th>
-                        <th>แก้ไข</th>
-                        <th>ลบ</th>
+                        <?php
+                        if ($_SESSION['token'] == 1) {
+                            echo "<th>แก้ไข</th>
+                                <th>ลบ</th>";
+                        }
+
+                        ?>
                     </tr>
                     <!--รอ service ครบค่อยใส่ foreach-->
                 </thead>
@@ -52,15 +63,27 @@
                             <td>$bedDetail->date</td>
                             <td>$bedDetail->result</td>
                             <td>$bedDetail->doctorFirstname $bedDetail->doctorLastname</td>
-                            <td><a href=?controller=bedDetail&action=updatePage&id=$bedDetail->bedDetail_id >✍️</a></td>"; ?>
-
-                        <td>
-                            <form method=POST action="?controller=bedDetail&action=delete">
-                                <input name="bedDetail_id" type="hidden" value="<?php echo "$bedList->bed_id"; ?>">
-                                <input name="hospital_id" type="hidden" value="<?php echo "$bedDetail->hospital_id"; ?>" />
-                                <a type="button" class="show_confirm" data-toggle="tooltip" test="<?php echo $bedDetail->bedDetail_id; ?>">🚮</a>
+                            "; ?>
+                        <?php
+                        if ($_SESSION['token'] == 1) {
+                            echo "
+                            <td><a href=?controller=bedDetail&action=updatePage&id=$bedDetail->bedDetail_id >✍️</a></td>
+                            <td>
+                            <form method=POST action=?controller=bedDetail&action=delete>
+                                <input name=bedDetail_id type=hidden value=" . $bedList->bed_id . ">
+                                <input name=hospital_id type=hidden value=" . $bedDetail->hospital_id . " />
+                                <a type=button class=show_confirm data-toggle=tooltip test=" . $bedDetail->bedDetail_id . ">🚮</a>
                             </form>
-                        </td>
+                            </td>
+                            
+                            
+                            ";
+                        }
+
+
+
+                        ?>
+
                     <?php echo "
                         </tr>";
                     }
