@@ -28,4 +28,12 @@ class BedDetailController
         $hospital_id = $_GET['hospital_id'];
         BedDetailController::index();
     }
+
+    public function delete()
+    {
+        $bedDetail_id = $_POST['bedDetail_id'];
+        bedDetail::delete($bedDetail_id);
+        $hospital_id = $_POST['hospital_id'];
+        BedDetailController::index();
+    }
 }
