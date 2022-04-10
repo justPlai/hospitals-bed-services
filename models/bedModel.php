@@ -58,7 +58,7 @@ class bed
         return new bed($bed_id, $room_id, $hospital_id,$hospital_name,$hospital_location,$hospital_phonenumber);
     }
 
-    public static function getbyroomId($room_id)
+    public static function searchbyroomId($room_id)
     {
         require("connection_connect.php");
         $sql = "SELECT * FROM bed WHERE room_id = '$room_id'";
