@@ -9,7 +9,6 @@ class BedDetailController
     }
     public function createPage(){
         $hospital_id = $_GET['hospital_id'];
-        echo $hospital_id;
         $patientList = patientModel::getAll();
         $doctorList = doctorModel::getAll();
         $bedList = bed::getAll();
