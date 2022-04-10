@@ -70,6 +70,12 @@ class doctorTwoModel{
         doctor_api::update($doctor_id, $doctor_firstname, $doctor_lastname, $doctor_phonenumber, $hospital_id);
     }
     public static function delete($doctor_id){
+        require("connection_connect.php");
+
+        $sql = "DELETE FROM bedDetail WHERE bedDetail.doctor_id = '$doctor_id'";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+
         doctor_api::delete($doctor_id);
     }
 }
