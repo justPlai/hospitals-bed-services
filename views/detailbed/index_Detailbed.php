@@ -24,7 +24,7 @@
                     <input type="text" id="searchDetail" onkeyup="myFunction()" value="" placeholder="ค้นหา">
                 </div>
                 <div class="col mt-4">
-                    <a class="btn btn-primary" href="?controller=bedDetail&action=createPage" style='margin-top: 10px; left: 60%; position:relative;'>เพิ่มรายละเอียดเตียง</a><br>
+                    <a class="btn btn-primary" href="?controller=bedDetail&action=createPage&hospital_id=<?php echo $hospital_id; ?>" style='margin-top: 10px; left: 60%; position:relative;'>เพิ่มรายละเอียดเตียง</a><br>
                 </div>
             </div>
 

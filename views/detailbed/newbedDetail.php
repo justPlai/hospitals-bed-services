@@ -111,7 +111,7 @@
                         <!--ใส่ id-->
                         <div class="row">
                             <div class="col">
-                                <button class="btn btn-primary" type="submit" name="action" value="create">อัพเดต</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="create">เพิ่ม</button>
                                 <button class="btn btn-primary" type="submit" name="action" value="index">ย้อนกลับ</button>
                             </div>
                         </div>
