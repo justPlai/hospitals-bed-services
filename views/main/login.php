@@ -241,8 +241,7 @@
             <i class="fas fa-user"></i>
           </div>
           <div class="div">
-            <h5>Username</h5>
-            <input type="text" class="input">
+            <input type="text" class="input" name="username" placeholder="Username">
           </div>
         </div>
         <div class="input-div pass">
@@ -250,12 +249,11 @@
             <i class="fas fa-lock"></i>
           </div>
           <div class="div">
-            <h5>Password</h5>
-            <input type="password" class="input">
+            <input type="password" class="input" name="password" placeholder="Password">
           </div>
         </div>
         <input type="hidden" name="action" value="login" />
-        <input type="hidden" name="controller" value="acount" />
+        <input type="hidden" name="controller" value="account" />
         <button type="submit" class="btn">เข้าสู่ระบบ</button>
       </form>
     </div>

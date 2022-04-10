@@ -18,7 +18,7 @@ function call($controller, $action)
             $controller = new PagesController();
             break;
         case "account":
-            require_once('controllers/pages_controller.php');
+            require_once('models/accountModel.php');
             $controller = new AccountController();
             break;
         case "hospital":
@@ -67,3 +67,4 @@ if (array_key_exists($controller, $controllers)) {
 } else {
     call('pages', 'error');
 }
+
