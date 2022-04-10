@@ -44,7 +44,7 @@
         </div>
 
         <div class="row">
-            <div class="col" style="position: relative; margin-top:5%;left:18%;">
+            <div class="col" style="position: relative; margin-top:7%;left:18%;">
                 <h1 >โรงพยาบาลชลประทาน</h1>
                 <h1 >มีจำนวนผู้เข้ารักษามากที่สุด</h1>
             </div>

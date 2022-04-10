@@ -271,4 +271,28 @@ class bedDetail
 
         return $countBedDetailList;
     }
+
+    public static function count(){
+        $hospitalList = hospital::getAll();
+        $count = 0;
+        foreach($hospitalList as $hospital){
+            $count = $count + bedDetail::countByhospital_id($hospital->hospital_id);
+        }
+
+        return $count;
+    }
+
+    public static function topHospital(){
+        $hospitalList = hospital::getAll();
+        $hospital_id = 0;
+        $total = 0;
+        foreach($hospitalList as $hospital){
+            if(bedDetail::countByhospital_id($hospital->hospital_id) > $total){
+                $total = bedDetail::countByhospital_id($hospital->hospital_id);
+                $hospital_id = $hospital->hospital_id;
+            }
+        }
+
+        return $hospital_id;
+    }
 }
