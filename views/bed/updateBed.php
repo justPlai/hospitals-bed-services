@@ -66,15 +66,15 @@
                     <div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col" style="position: relative; margin-top:5%">
                                 <label style="margin-right:65%;">หมายเลขห้อง</label>
                                 <input type="text" class="form-control" name="room_id" value="<?php echo $bedList->room_id; ?>" /><br>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
-                                <label style="margin-right:75%;">โรงพยาบาล</label>
+                            <div class="col" style="position: relative; margin-top:5%">
+                                <label style="margin-right:65%;">โรงพยาบาล</label>
                                 <select name="hospital_id">
                                     <?php foreach ($hospitalList as $hospitalList) {
                                         echo "<option value = $hospitalList->hospital_id";

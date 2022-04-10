@@ -7,6 +7,7 @@
     #searchbed {
         position: relative;
         right: 40px;
+        width: 500px;
         font-size: large;
 
     }
