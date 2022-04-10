@@ -16,6 +16,8 @@ class HospitalController
 
     public function updatePage()
     {
-        // require_once('views/hospital/updateHospital.php');
+        $id = $_GET['id'];
+        $hospital = hospital::getById($id);
+        require_once('views/hospital/updateHospital.php');
     }
 }

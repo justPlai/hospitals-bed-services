@@ -48,7 +48,7 @@
                             <td>$bedDetail->date</td>
                             <td>$bedDetail->result</td>
                             <td>$bedDetail->doctorFirstname $bedDetail->doctorLastname</td>
-                            <td><a class=btn btn-primary href=>✍️</a></td>
+                            <td><a class=btn btn-primary href=?controller=bedDetail&action=updatePage>✍️</a></td>
                         </tr>";
                     }
                 ?>
