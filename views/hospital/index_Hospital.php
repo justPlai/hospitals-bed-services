@@ -19,7 +19,7 @@
                 <i class="bi bi-hospital-fill" style='font-size:50px; top: 15px; position:relative;'></i>
             </div>
             <div class="col mt-4">
-                <input type="text" id="searchHospital" onkeyup="myFunction()" value="นา" placeholder="ชื่อโรงพยาบาล">
+                <input type="text" id="searchHospital" onkeyup="myFunction()" placeholder="ชื่อโรงพยาบาล">
 
                 <input type="hidden" name="controller" value="hospital">
                 <input type="hidden" name="action" value="index">
