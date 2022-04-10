@@ -1,6 +1,6 @@
 <?php
 //เชื่อมต่อ server
-$severname = "158.108.207.7";
+$severname = "localhost";
 $username = "SOA65_01";
 $password = "SOA65_01";
 $dbname = "SOA65_01_02";
