@@ -114,4 +114,14 @@ class bed
 
         return $result;
     }
+
+    public static function countList(){
+        $hospitalList = hospital::getAll();
+        $countBedList = [];
+        foreach($hospitalList as $hospital){
+            $countBedList[] = bed::countByhospital_id($hospital->hospital_id);
+        }
+
+        return $countBedList;
+    }
 }
