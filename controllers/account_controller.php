@@ -6,7 +6,7 @@ class AccountController
         require_once('views/admin/index.php');
     }
 
-    public function signIn()
+    public function login()
     {
         $baseUsername = $_GET['username'];
         $basePassword = $_GET['password'];
@@ -21,7 +21,7 @@ class AccountController
         header("Location: index.php");
     }
 
-    public function signOut()
+    public function logout()
     {
         session_destroy();
         header("Location: index.php");
