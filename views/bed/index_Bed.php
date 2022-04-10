@@ -33,6 +33,7 @@
                     <th>โรงพยาบาล</th>
                     <th>ห้อง</th>
                     <th>แก้ไข</th>
+                    <th>ถังขยะ</th>
                 </tr>
                 <!--รอ service ครบค่อยใส่ foreach-->
             </thead>
@@ -43,8 +44,14 @@
                             <td>$bedList->bed_id</td>
                             <td>$bedList->hospital_name</td>
                             <td>$bedList->room_id</td>
-                            <td><a type=button href=?controller=bed&action=updatePage&id=$bedList->bed_id >📝</a></td>
-                        </tr>";
+                            <td><a type=button href=?controller=bed&action=updatePage&id=$bedList->bed_id >📝</a></td>";
+                    ?>
+                            <td><form method=POST action="?controller=bed&action=delete">
+                            <input name="id" type="hidden" value="<?php echo "$bedList->bed_id";?>">
+                            <a type="button" class="show_confirm" data-toggle="tooltip" test="<?php echo $bedList->bed_id;?>" >🚮</a>
+                            </form></td>
+                    <?php
+                        echo "</tr>";
                     }
                 ?>
             </tbody>
@@ -87,4 +94,36 @@
 
 
     }
+</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+ 
+     $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          var test = $(this).attr("test");
+          event.preventDefault();
+          Swal.fire({
+          title: 'แน่ใจว่าคุณต้องการลบ?',
+          text: ""+test,
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'ลบ',
+          cancelButtonText: 'ยกเลิก'
+          }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire(
+              'ลบเสร็จสิ้น!',
+              'เตียงนี้ได้ถูกลบไปแล้ว',
+              'success'
+            )
+            .then(function() {
+            form.submit(); // <--- submit form programmatically
+            });
+        }
+        })
+      });
+  
 </script>
