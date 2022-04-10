@@ -47,8 +47,6 @@
         font-family: sans-serif;
     }
 
-
-    
 </style>
 
 <div id="navbar-main">
@@ -62,9 +60,9 @@
             <a class="navbar-brand" href="?controller=hospital&action=index">
                 รายชื่อทั้งหมด
             </a>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
+            <a class="navbar-brand" href="?controller=bed&action=index">
+                เตียงทั้งหมด
+            </a>
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
