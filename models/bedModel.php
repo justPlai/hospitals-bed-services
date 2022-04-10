@@ -105,4 +105,23 @@ class bed
         require("connection_close.php");
         return "Delete success $result row";
     }
+
+    public static function countByhospital_id($hospital_id){
+        require("connection_connect.php");
+        $sql = "SELECT COUNT(bed.bed_id) FROM bedDetail INNER JOIN bed ON (bed.bed_id = bedDetail.bed_id) WHERE bed.hospital_id = '$hospital_id'";
+        $result = $conn->query($sql);
+        require("connection_close.php");
+
+        return $result;
+    }
+
+    public static function countList(){
+        $hospitalList = hospital::getAll();
+        $countBedList = [];
+        foreach($hospitalList as $hospital){
+            $countBedList[] = bed::countByhospital_id($hospital->hospital_id);
+        }
+
+        return $countBedList;
+    }
 }

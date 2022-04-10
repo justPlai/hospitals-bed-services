@@ -71,7 +71,7 @@ if (isset($_GET['controller']) && isset($_GET['action'])) {
 
 </head>
 <?php
-if($_GET['controller'] != "admin" || $_GET['action'] != "index"){
+if($_GET['controller'] != "account" || $_GET['action'] != "index"){
     require_once("navbar.php");
 }
 

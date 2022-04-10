@@ -66,6 +66,8 @@
             <a class="navbar-brand" href="?controller=doctor&action=index">
                 รายชื่อหมอทั้งหมด
             </a>
+
+
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
@@ -81,10 +83,7 @@
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <a class="navbar-brand-right" href="?controller=admin&action=index">
+            <a class="navbar-brand-right" href="?controller=account&action=index">
                 Login
                 <div id="admin-only">admin only</div>
             </a>

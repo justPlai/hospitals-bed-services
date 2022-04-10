@@ -3,7 +3,7 @@ class AccountController
 {
     public function index()
     {
-        require_once('views/admin/index.php');
+        require_once('views/main/login.php');
     }
 
     public function login()
