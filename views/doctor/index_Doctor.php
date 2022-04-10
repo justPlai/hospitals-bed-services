@@ -18,7 +18,7 @@
     <div class="container mt-5">
         <div class="row" style="margin-bottom: 20px;">
             <div class="col-1">
-                <i class="bi bi-hospital-fill" style='font-size:50px; top: 15px; position:relative;'></i>
+                <i class="fa fa-user-md" style='font-size:50px; top: 15px; position:relative;'></i>
             </div>
             <div class="col mt-4">
                 <input type="text" id="searchdoctor" onkeyup="myFunction()" placeholder="ค้นหา...">
