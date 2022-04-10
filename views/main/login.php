@@ -232,7 +232,8 @@
       <img src="https://cdn.pixabay.com/photo/2020/12/18/00/43/medical-5840876_960_720.png">
     </div>
     <div class="login-content">
-      <form action="index.html">
+    <!-- name="action" value="login" -->
+      <form >
         <img src="https://freepikpsd.com/file/2019/10/user-login-png-transparent-6-Transparent-Images.png">
         <h2 class="title">เข้าสู่ระบบ</h2>
         <div class="input-div one">

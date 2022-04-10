@@ -1,7 +1,7 @@
 <?php
 class PagesController
 {
-    public function home()
+    public static function home()
     { 
         //hospital::add("ฉัน","คือ","คนไทย");
         //echo $k[0]->room_id;
