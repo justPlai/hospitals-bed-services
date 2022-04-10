@@ -75,10 +75,10 @@ class bed
         return new bed($bed_id, $room_id, $hospital_id,$hospital_name,$hospital_location,$hospital_phonenumber);
     }
 
-    public static function update($bed_id, $room_id, $hospital_id)
+    public static function update($room_id, $hospital_id,$id)
     {
         require("connection_connect.php");
-        $sql = "UPDATE bed SET room_id = '$room_id', hospital_id = '$hospital_id' WHERE bed_id = '$bed_id'";
+        $sql = "UPDATE bed SET room_id = '$room_id', hospital_id = '$hospital_id' WHERE bed_id = '$id'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "update success $result row";

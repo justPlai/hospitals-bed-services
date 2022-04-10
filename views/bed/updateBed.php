@@ -24,18 +24,31 @@
     select,
     textarea {
         width: 800px;
-        height: 50px;
+        height: 40px;
         border: 1px solid #ccc;
         border-radius: 4px;
         resize: vertical;
+        font-size: 20px;
     }
 
     input[type=date] {
         width: 800px;
+        height: 40px;
         padding: 12px;
         border: 1px solid #ccc;
         border-radius: 4px;
         resize: vertical;
+        font-size: 20px;
+    }
+
+    label {
+        position: relative;
+        font-size: 25px;
+    }
+
+    .row {
+        position: relative;
+        top: 20px;
     }
 </style>
 
@@ -43,51 +56,47 @@
     <center>
         <div>
 
-            <div style="position: relative;right:320px">
-                <h2><i class="fa fa-wrench" style="font-size:50px;" aria-hidden="true"></i>แก้ไขข้อมูลเตียงผู้ป่วย</h2>
+            <div style="position: relative; right:320px; margin-top:3%">
+                <h2><i class="fa fa-wrench" style="font-size:50px;" aria-hidden="true"></i>แก้ไขข้อมูลเตียง</h2>
             </div>
 
             <div class="block-1">
                 <form method="get" action="">
 
-                    <div style="position: relative;top:50px">
+                    <div>
+
                         <div class="row">
                             <div class="col">
-                                <label style="position: relative;right:340px;font-size: 20px">ลำดับที่</label>
-                                <input type="text" class="form-control " name="hospitalName" value="<?php echo $bedList->bed_id;?>" /><br>
-                                <div>
-                                    <div>
+                                <label style="margin-right:65%;">หมายเลขห้อง</label>
+                                <input type="text" class="form-control" name="room_id" value="<?php echo $bedList->room_id; ?>" /><br>
+                            </div>
+                        </div>
 
-                                        <div class="row" style="position: relative;top: 20px;">
-                                            <div class="col">
-                                                <label style="position: relative;right:330px;font-size: 20px;">หมายเลขห้อง</label>
-                                                <input type="text" class="form-control" name="hospitalLocation" value="<?php echo $bedList->room_id;?>" /><br>
-                                                <div>
-                                                    <div>
-                                                        <div class="row" style="position: relative;top: 20px;">
-                                                            <div class="col">
-                                                                <label style="position: relative;right:320px;font-size: 20px;">ชื่อโรงพยาบาล</label>
-                                                              <div class="col">
-                                                                    <select name="A_ID">
-                                                                <?php foreach($hospitalList as $hospitalList) {
-                                                                    echo "<option value = $hospitalList->hospital_id";
-                                                                    if($hospitalList->hospital_id==$bedList->hospital_id){echo " selected='selected'";}
-                                                                    echo ">$hospitalList->hospital_name</option>";}?></select><br>
-                                                                  <div>
-                                                                <div>
-                                                                    <div>
+                        <div class="row">
+                            <div class="col">
+                                <label style="margin-right:75%;">หมอ</label>
+                                <select name="hospital_id">
+                                    <?php foreach ($hospitalList as $hospitalList) {
+                                        echo "<option value = $hospitalList->hospital_id";
+                                        if ($hospitalList->hospital_id == $bedList->hospital_id) {
+                                            echo " selected='selected'";
+                                        }
+                                        echo ">$hospitalList->hospital_name</option>";
+                                    } ?></select>
+                            </div>
+                        </div>
 
 
-                                                                        <input type="hidden" name="controller" value="bed" />
-                                                                        <input type="hidden" name="oldid" value="<?php echo $bedList->bed_id;?>" />
-                                                                        <!--ใส่ id-->
-                                                                        <div class="row" style="position: relative;top: 20px;">
-                                                                            <div class="col">
-                                                                                <button class="btn btn-primary" type="submit" name="action" value="">อัพเดต</button>
-                                                                                <button class="btn btn-primary" type="submit" name="action" value="">ย้อนกลับ</button>
-                                                                                <div>
-                                                                                    <div>
-                                                                                        <div>
+                        <input type="hidden" name="controller" value="bed" />
+                        <input type="hidden" name="id" value="<?php echo $bedList->bed_id; ?>" ?> />
+                        <!--ใส่ id-->
+                        <div class="row">
+                            <div class="col" style="position: relative; margin-top:10%">
+                                <button class="btn btn-primary" type="submit" name="action" value="update">อัพเดต</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="index">ย้อนกลับ</button>
+                            </div>
+                        </div>
+                    </div>
 
                 </form>
             </div>

@@ -13,4 +13,19 @@ class BedController
         $hospitalList = hospital::getAll();
         require_once('views/bed/updateBed.php');
     }
+    public function update()
+    {
+        $room_id=$_GET['room_id'];
+        $hospital_id=$_GET['hospital_id'];
+        $id=$_GET['id'];
+        
+        bed::update($room_id,$hospital_id,$id);
+        BedController::index();
+    }
+    public function delete()
+    {
+        $id=$_POST['id'];
+        bed::delete($id);
+        BedController::index();
+    }
 }
