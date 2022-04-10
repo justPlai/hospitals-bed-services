@@ -1,7 +1,7 @@
 <?php
 $controllers = array(
     'pages' => ['home', 'error'],
-    'admin' => ['index', 'login'],
+    'account' => ['index', 'login', 'logout'],
     'hospital' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete'],
     'bedDetail' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete'],
     'bed' => ['index', 'search', 'createPage', 'create', 'updatePage', 'update', 'delete']
@@ -16,9 +16,9 @@ function call($controller, $action)
             require_once("models/bedModel.php");
             $controller = new PagesController();
             break;
-        case "admin":
+        case "account":
             require_once('controllers/pages_controller.php');
-            $controller = new AdminController();
+            $controller = new AccountController();
             break;
         case "hospital":
             require_once('api/hospital_api.php');
