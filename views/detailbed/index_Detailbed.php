@@ -11,37 +11,38 @@
 
     }
 </style>
+
 <body>
     <div class="container mt-5">
 
         <div class="container mt-5">
-        <div class="row" style="margin-bottom: 20px;">
-            <div class="col-1">
-                <i class="fa fa-bed" style='font-size:50px; top: 15px; position:relative;'></i>
-            </div>
-            <div class="col mt-4">
-                <input type="text" id="searchDetail" onkeyup="myFunction()" value="" placeholder="ค้นหา">
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-1">
+                    <i class="fa fa-bed" style='font-size:50px; top: 15px; position:relative;'></i>
+                </div>
+                <div class="col mt-4">
+                    <input type="text" id="searchDetail" onkeyup="myFunction()" value="" placeholder="ค้นหา">
 
-                <input type="hidden" name="controller" value="hospital">
-                <input type="hidden" name="action" value="index">
+                    <input type="hidden" name="controller" value="hospital">
+                    <input type="hidden" name="action" value="index">
+                </div>
             </div>
-        </div>
 
-        <table class="table table-hover" id="myTable">
-            <thead class="table-dark text-center">
-                <tr>
-                    <th>หมายเลขเตียง</th>
-                    <th>ชื่อ-สกุล ผู้ป่วย</th>
-                    <th>วันที่เข้ารับการรักษา</th>
-                    <th>ผลการตรวจ</th>
-                    <th>ชื่อ-สกุล หมอ</th>
-                    <th>แก้ไข</th>
-                </tr>
-                <!--รอ service ครบค่อยใส่ foreach-->
-            </thead>
-            <tbody class="text-center">
-                <?php 
-                    foreach($bedDetailList as $bedDetail){
+            <table class="table table-hover" id="myTable">
+                <thead class="table-dark text-center">
+                    <tr>
+                        <th>หมายเลขเตียง</th>
+                        <th>ชื่อ-สกุล ผู้ป่วย</th>
+                        <th>วันที่เข้ารับการรักษา</th>
+                        <th>ผลการตรวจ</th>
+                        <th>ชื่อ-สกุล หมอ</th>
+                        <th>แก้ไข</th>
+                    </tr>
+                    <!--รอ service ครบค่อยใส่ foreach-->
+                </thead>
+                <tbody class="text-center">
+                    <?php
+                    foreach ($bedDetailList as $bedDetail) {
                         echo "<tr>
                             <td>$bedDetail->bedDetail_id</td>
                             <td>$bedDetail->firstName $bedDetail->lastName</td>
@@ -51,11 +52,11 @@
                             <td><a href=?controller=bedDetail&action=updatePage&id=$bedDetail->bedDetail_id >✍️</a></td>
                         </tr>";
                     }
-                ?>
-            </tbody>
-        </table>
+                    ?>
+                </tbody>
+            </table>
 
-    </div>
+        </div>
 </body>
 
 </html>
@@ -88,7 +89,7 @@
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
                         x = 0;
-                    } 
+                    }
                 }
             }
 
