@@ -7,6 +7,25 @@ class BedDetailController
         $bedDetailList = bedDetail::getByHospitalId($hospital_id);
         require_once('views/detailbed/index_Detailbed.php');
     }
+    public function createPage(){
+        $hospital_id = $_GET['hospital_id'];
+        $patientList = patientModel::getAll();
+        $doctorList = doctorModel::getAll();
+        $bedList = bed::getAll();
+        require_once('views/detailbed/newbedDetail.php');
+    }
+
+    public function create(){
+        $patient_id = $_GET['patient_id'];
+        $bed_id = $_GET['bed_id'];
+        $doctor_id = $_GET['doctor_id'];
+        bedDetail::add($patient_id, $bed_id, $doctor_id);
+
+        $hospital_id = $_GET['hospital_id'];
+        BedDetailController::index();
+    }
+
+
     public function updatePage()
     {
         $id = $_GET['id'];

@@ -19,13 +19,13 @@
             <div class="col-1">
                 <i class="bi bi-hospital-fill" style='font-size:50px; top: 15px; position:relative;'></i>
             </div>
-            <div class="col mt-4">
+            <div class="col">
                 <input type="text" id="searchHospital" onkeyup="myFunction()" placeholder="ชื่อโรงพยาบาล">
 
                 <input type="hidden" name="controller" value="hospital">
                 <input type="hidden" name="action" value="index">
             </div>
-            <div class="col mt-4">
+            <div class="col">
                 <a class="btn btn-primary" href="?controller=hospital&action=createPage" style='left: 60%; position:relative;'>เพิ่มโรงพยาบาล</a><br>
             </div>
         </div>

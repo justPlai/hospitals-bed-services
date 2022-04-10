@@ -22,11 +22,13 @@
                 </div>
                 <div class="col mt-4">
                     <input type="text" id="searchDetail" onkeyup="myFunction()" value="" placeholder="ค้นหา">
-
-                    <input type="hidden" name="controller" value="hospital">
-                    <input type="hidden" name="action" value="index">
+                </div>
+                <div class="col mt-4">
+                    <a class="btn btn-primary" href="?controller=bedDetail&action=createPage&hospital_id=<?php echo $hospital_id; ?>" style='margin-top: 10px; left: 60%; position:relative;'>เพิ่มรายละเอียดเตียง</a><br>
                 </div>
             </div>
+
+
 
             <table class="table table-hover" id="myTable">
                 <thead class="table-dark text-center">
@@ -52,12 +54,14 @@
                             <td>$bedDetail->doctorFirstname $bedDetail->doctorLastname</td>
                             <td><a href=?controller=bedDetail&action=updatePage&id=$bedDetail->bedDetail_id >✍️</a></td>"; ?>
 
-                            <td><form method=POST action="?controller=bedDetail&action=delete">
-                            <input name="bedDetail_id" type="hidden" value="<?php echo "$bedList->bed_id";?>">
-                            <input name="hospital_id" type="hidden" value="<?php echo "$bedDetail->hospital_id";?>" />
-                            <a type="button" class="show_confirm" data-toggle="tooltip" test="<?php echo $bedDetail->bedDetail_id;?>" >🚮</a>
-                            </form></td>
-                            <?php echo"
+                        <td>
+                            <form method=POST action="?controller=bedDetail&action=delete">
+                                <input name="bedDetail_id" type="hidden" value="<?php echo "$bedList->bed_id"; ?>">
+                                <input name="hospital_id" type="hidden" value="<?php echo "$bedDetail->hospital_id"; ?>" />
+                                <a type="button" class="show_confirm" data-toggle="tooltip" test="<?php echo $bedDetail->bedDetail_id; ?>">🚮</a>
+                            </form>
+                        </td>
+                    <?php echo "
                         </tr>";
                     }
                     ?>
@@ -119,33 +123,31 @@
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
- 
-     $('.show_confirm').click(function(event) {
-          var form =  $(this).closest("form");
-          var name = $(this).data("name");
-          var test = $(this).attr("test");
-          event.preventDefault();
-          Swal.fire({
-          title: 'แน่ใจว่าคุณต้องการลบ?',
-          text: ""+test,
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'ลบ',
-          cancelButtonText: 'ยกเลิก'
-          }).then((result) => {
-          if (result.isConfirmed) {
-            Swal.fire(
-              'ลบเสร็จสิ้น!',
-              'รายละเอียดนี้ได้ถูกลบไปแล้ว',
-              'success'
-            )
-            .then(function() {
-            form.submit(); // <--- submit form programmatically
-            });
-        }
+    $('.show_confirm').click(function(event) {
+        var form = $(this).closest("form");
+        var name = $(this).data("name");
+        var test = $(this).attr("test");
+        event.preventDefault();
+        Swal.fire({
+            title: 'แน่ใจว่าคุณต้องการลบ?',
+            text: "" + test,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'ลบ',
+            cancelButtonText: 'ยกเลิก'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                        'ลบเสร็จสิ้น!',
+                        'รายละเอียดนี้ได้ถูกลบไปแล้ว',
+                        'success'
+                    )
+                    .then(function() {
+                        form.submit(); // <--- submit form programmatically
+                    });
+            }
         })
-      });
-  
+    });
 </script>
