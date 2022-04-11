@@ -128,8 +128,6 @@
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
             <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
-            <div class="navbar-brand" href="#"></div>
             
             
             <?php
