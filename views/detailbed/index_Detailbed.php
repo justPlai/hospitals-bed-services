@@ -28,7 +28,7 @@
                     <?php
                     if ($_SESSION['token'] == 1) {
                         echo '<a class="btn btn-primary"';
-                        echo " href=?controller=bedDetail&action=createPage&hospital_id=" . $hospital_id . " style='margin-top: 10px; left: 60%; position:relative;'";
+                        echo " href=?controller=bedDetail&action=createPage&hospital_id=" . $hospital_id . " style='margin-top: 10px; left: 72%; position:relative;'";
                         echo ">เพิ่มรายละเอียดเตียง</a><br>";
                     }
                     ?>

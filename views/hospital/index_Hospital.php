@@ -29,7 +29,7 @@
             <?php
                     if($_SESSION['token'] == 1)
                     {
-                        echo '<a class="btn btn-primary" href=?controller=hospital&action=createPage style="left: 60%;position:relative;">เพิ่มโรงพยาบาล</a><br>';
+                        echo '<a class="btn btn-primary" href=?controller=hospital&action=createPage style="left: 78%;position:relative;">เพิ่มโรงพยาบาล</a><br>';
                     }
             ?>
             </div>

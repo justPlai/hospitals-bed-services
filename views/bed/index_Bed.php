@@ -27,7 +27,7 @@
                 <input type="hidden" name="action" value="index">
             </div>
             <div class="col mt-4">
-                <a class="btn btn-primary" href="?controller=bed&action=createPage" style='left: 60%; position:relative;'>เพิ่มเตียงโรงพยาบาล</a><br>
+                <a class="btn btn-primary" href="?controller=bed&action=createPage" style='left: 72%; position:relative;'>เพิ่มเตียงโรงพยาบาล</a><br>
             </div>
         </div>
 

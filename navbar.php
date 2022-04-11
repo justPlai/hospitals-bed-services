@@ -47,13 +47,40 @@
         font-family: sans-serif;
     }
 
-    #logout{
-        margin-top: 10px;
-        background-color: #DCDCDC;
-        color: #000000;
-        border-radius: 20px;
-        padding-top: 20px;
-    }
+    #logout {
+        position: relative;
+  top: 25px;
+  right: 50px;
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#logout:hover,
+#logout:focus {
+  background-color: #F082AC;
+}
 
 </style>
 
@@ -117,7 +144,7 @@
                     ";
                 }else{
                     echo "
-                    <div style=margin-top: 20px; class=navbar-brand href=#>".$_SESSION['firstname']."</div>
+                    <div style=margin-top: 20px; class=navbar-brand href=#>😃ชื่อผู้ใช้ : ".$_SESSION['firstname']."</div>
                     <div class=navbar-brand href=#></div>
                     <a id=logout style=margin-top: 10px; class=navbar-brand-right href=?controller=account&action=logout>
                     Logout
