@@ -238,7 +238,7 @@
         <h2 class="title">เข้าสู่ระบบ</h2>
         <div class="input-div one">
           <div class="i">
-            <i class="fas fa-user"></i>
+            <i class="bi bi-person-fill"></i>
           </div>
           <div class="div">
             <input type="text" class="input" name="username" placeholder="Username">
@@ -246,7 +246,7 @@
         </div>
         <div class="input-div pass">
           <div class="i">
-            <i class="fas fa-lock"></i>
+            <i class="bi bi-lock-fill"></i>
           </div>
           <div class="div">
             <input type="password" class="input" name="password" placeholder="Password">

@@ -49,12 +49,12 @@
                             <td>$doctorList->doctorFirstname $doctorList->doctorLastname</td>
                             <td>$doctorList->hospital_name</td>
                             <td>$doctorList->doctorPhonenumber</td>
-                            <td><a type=button href=?controller=doctor&action=updatePage&id=$doctorList->doctorId >📝</a></td>";
+                            <td><a type=button style=text-decoration:none;font-size:25px href=?controller=doctor&action=updatePage&id=$doctorList->doctorId >📝</a></td>";
                 ?>
                     <td>
                         <form method=POST action="?controller=doctor&action=delete">
                             <input name="id" type="hidden" value="<?php echo "$doctorList->doctorId"; ?>">
-                            <a type="button" class="show_confirm" data-toggle="tooltip" test="<?php echo "$doctorList->doctorFirstname"; ?> <?php echo "$doctorList->doctorLastname"; ?>">🚮</a>
+                            <a type="button" style="text-decoration:none;font-size:25px" class="show_confirm" data-toggle="tooltip" test="<?php echo "$doctorList->doctorFirstname"; ?> <?php echo "$doctorList->doctorLastname"; ?>">🗑️</a>
                         </form>
                     </td>
                 <?php

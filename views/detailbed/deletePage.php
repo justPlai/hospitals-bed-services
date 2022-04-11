@@ -61,7 +61,7 @@
         <div>
 
             <div style="position: relative; right:320px; margin-top:3%">
-                <h2><i class="fa fa-wrench" style="font-size:50px;" aria-hidden="true"></i>เพิ่มรายละเอียดเตียงผู้ป่วย</h2>
+                <h2><i class="bi bi-trash" style="font-size:50px;" aria-hidden="true"></i>ลบรายละเอียดเตียงผู้ป่วย</h2>
             </div>
 
             <div class="block-1">
@@ -93,8 +93,8 @@
                         <!--ใส่ id-->
                         <div class="row">
                             <div class="col" style="margin-top: 80px;">
-                                <button class="btn btn-primary" type="submit" name="action" value="delete">ลบ</button>
-                                <button class="btn btn-primary" type="submit" name="action" value="index">ย้อนกลับ</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="delete">ลบข้อมูล</button>
+                                <button class="btn btn-danger" type="submit" name="action" value="index">ย้อนกลับ</button>
                             </div>
                         </div>
                     </div>

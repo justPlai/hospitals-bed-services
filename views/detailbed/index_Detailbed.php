@@ -7,6 +7,7 @@
     #searchDetail {
         position: relative;
         right: 40px;
+        width: 500px;
         font-size: large;
 
     }
@@ -67,8 +68,8 @@
                         <?php
                         if ($_SESSION['token'] == 1) {
                             echo "
-                            <td><a href=?controller=bedDetail&action=updatePage&id=$bedDetail->bedDetail_id >✍️</a></td>
-                            <td><a href=?controller=bedDetail&action=deletePage&id=$bedDetail->bedDetail_id >🚮</a></td>
+                            <td><a style=text-decoration:none;font-size:25px href=?controller=bedDetail&action=updatePage&id=$bedDetail->bedDetail_id >📝</a></td>
+                            <td><a style=text-decoration:none;font-size:25px href=?controller=bedDetail&action=deletePage&id=$bedDetail->bedDetail_id >🗑️</a></td>
                             ";
                         }
 

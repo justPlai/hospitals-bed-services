@@ -106,8 +106,8 @@
                         <!--ใส่ id-->
                         <div class="row">
                             <div class="col" style="position: relative; margin-top:2%">
-                                <button class="btn btn-primary" type="submit" name="action" value="update">อัพเดต</button>
-                                <button class="btn btn-primary" type="submit" name="action" value="index">ย้อนกลับ</button>
+                                <button class="btn btn-success" type="submit" name="action" value="update">อัพเดต</button>
+                                <button class="btn btn-danger" type="submit" name="action" value="index">ย้อนกลับ</button>
                             </div>
                         </div>
                     </div>

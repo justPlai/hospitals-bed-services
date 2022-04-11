@@ -18,7 +18,7 @@
     <div class="container mt-5">
         <div class="row" style="margin-bottom: 20px;">
             <div class="col-1">
-                <i class="bi bi-hospital-fill" style='font-size:50px; top: 15px; position:relative;'></i>
+                <i class="fa fa-bed" style='font-size:50px; top: 15px; position:relative;'></i>
             </div>
             <div class="col mt-4">
                 <input type="text" id="searchbed" onkeyup="myFunction()" placeholder="ค้นหา...">
@@ -49,12 +49,12 @@
                             <td>$bedList->bed_id</td>
                             <td>$bedList->hospital_name</td>
                             <td>$bedList->room_id</td>
-                            <td><a type=button href=?controller=bed&action=updatePage&id=$bedList->bed_id >📝</a></td>";
+                            <td><a style=text-decoration:none;font-size:25px type=button href=?controller=bed&action=updatePage&id=$bedList->bed_id >📝</a></td>";
                 ?>
                     <td>
                         <form method=POST action="?controller=bed&action=delete">
                             <input name="id" type="hidden" value="<?php echo "$bedList->bed_id"; ?>">
-                            <a type="button" class="show_confirm" data-toggle="tooltip" test="<?php echo $bedList->bed_id; ?>">🚮</a>
+                            <a type="button" style="text-decoration:none;font-size:25px" class="show_confirm" data-toggle="tooltip" test="<?php echo $bedList->bed_id; ?>">🗑️</a>
                         </form>
                     </td>
                 <?php

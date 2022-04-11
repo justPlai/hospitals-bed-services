@@ -17,7 +17,7 @@
     <div class="container mt-5">
         <div class="row" style="margin-bottom: 20px;">
             <div class="col-1">
-                <i class="bi bi-hospital-fill" style='font-size:50px; top: 15px; position:relative;'></i>
+                <i class="bi bi-hospital-fill" style='font-size:50px; position:relative;'></i>
             </div>
             <div class="col">
                 <input type="text" id="searchHospital" onkeyup="myFunction()" placeholder="ชื่อโรงพยาบาล">
@@ -63,10 +63,10 @@
                         <td>$hospital->hospital_location</td>
                         <td>$hospital->hospital_phonenumber</td>
                         <td>";?> <?php echo $countBed[$count]-$countBedDetail[$count]; ?> <?php echo "</td>
-                        <td><a type=button href=?controller=bedDetail&action=index&hospital_id=$hospital->hospital_id >📝</a></td>";
+                        <td><a style=text-decoration:none;font-size:25px type=button href=?controller=bedDetail&action=index&hospital_id=$hospital->hospital_id >▶️</a></td>";
                         if($_SESSION['token'] == 1)
                         {
-                            echo "<td><a type=button href=?controller=hospital&action=updatePage&id=$hospital->hospital_id  >📝</a></td>";
+                            echo "<td><a style=text-decoration:none;font-size:25px type=button href=?controller=hospital&action=updatePage&id=$hospital->hospital_id  >📝</a></td>";
                         }
                         echo "</tr>";
                     $count = $count+1;
